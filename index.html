@@ -5,16 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Relógio Édith | All Inports</title>
   
-  <!-- Meta tags de Otimização e SEO -->
+  <!-- SEO & Optimization Meta Tags -->
   <meta name="description" content="Design oval clássico e sofisticado inspirado na joalheria vintage. O luxo silencioso que expressa delicadeza e elegância em cada detalhe." />
   <meta name="keywords" content="relogio edith, relogio feminino, all inports, relogio vintage, luxo silencioso" />
+  <meta name="robots" content="index, follow" />
   
-  <!-- Elegant Fonts -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Relógio Édith | All Inports" />
+  <meta property="og:description" content="Design oval clássico e sofisticado inspirado na joalheria vintage." />
+  <meta property="og:image" content="./src/assets/images/watch_gold_main_1780538308870.png" />
+  <meta property="og:site_name" content="All Inports" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Relógio Édith | All Inports" />
+  <meta name="twitter:description" content="O clássico vintage em formato oval que redefine o luxo feminino." />
+  
+  <!-- Elegant Favicon using Sparkles -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS Play CDN -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -32,7 +48,7 @@
     }
   </script>
   <style>
-    /* Custom delicate scrollbar styling */
+    /* Compact Custom Scrollbars */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -44,438 +60,513 @@
       background: #4B533F;
       border-radius: 3px;
     }
-    /* Simple dynamic fade state animation classes */
-    .fade-enter {
-      opacity: 0;
-      transform: scale(0.98);
-      transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
     }
-    .fade-enter-active {
-      opacity: 1;
-      transform: scale(1);
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
 </head>
 <body class="bg-[#F9F7F2] text-[#2D2D2D] font-sans selection:bg-[#4B533F] selection:text-[#F9F7F2] min-h-screen flex flex-col antialiased">
 
-  <!-- Top Announcement Banner -->
-  <div class="w-full bg-[#4B533F] text-white text-[10px] sm:text-xs font-semibold py-3 px-4 text-center tracking-widest uppercase border-b border-[#F9F7F2]/10 leading-relaxed select-none">
-    Receba seu pedido com entrega cortesia para todo o Brasil.
+  <!-- Promo Top Announcement Banner -->
+  <div class="w-full bg-[#4B533F] text-[#F9F7F2] py-2.5 px-4 text-center text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase leading-snug select-none">
+    RECEBA SEU PEDIDO COM ENTREGA CORTESIA PARA TODO BRASIL.
   </div>
 
-  <!-- Header Section -->
-  <header class="w-full bg-[#F9F7F2]/95 backdrop-blur-sm sticky top-0 z-40 border-b border-[#4B533F]/10 px-6 py-4 transition-all duration-200">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <!-- Hamburger Icon -->
-      <button class="text-[#2D2D2D] hover:text-[#4B533F] transition-colors focus:outline-none" aria-label="Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg>
+  <!-- Navbar Header -->
+  <header class="w-full bg-[#F9F7F2] border-b border-[#4B533F]/10 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Hamburguer menu toggle button -->
+      <button id="btn-menu-toggle" onclick="toggleMenu(true)" class="text-[#4B533F] p-2 hover:bg-[#4B533F]/5 rounded-full transition-all cursor-pointer" aria-label="Menu">
+        <i data-lucide="menu" class="w-6 h-6 stroke-[1.5]"></i>
       </button>
 
-      <!-- Brand Logo Custom Lettering Type -->
-      <div class="flex flex-col items-center">
-        <span class="text-2xl sm:text-3xl font-serif italic font-light text-[#4B533F] tracking-wide leading-none">all</span>
-        <span class="text-[9px] sm:text-[10px] tracking-[0.35em] text-[#A39171] uppercase font-bold mt-1.5 ml-0.5">Inports</span>
+      <!-- Logo with elegant serif typography layout -->
+      <div class="flex flex-col items-center select-none cursor-pointer">
+        <span class="font-serif italic font-bold text-2xl leading-none tracking-wide text-[#4B533F] lowercase">
+          all
+          <span class="block not-italic font-sans font-extrabold text-[10px] tracking-[0.3em] mt-0.5 text-[#A39171] uppercase">
+            inports
+          </span>
+        </span>
       </div>
 
-      <!-- User Account Action Button -->
-      <button class="text-[#2D2D2D] hover:text-[#4B533F] transition-colors focus:outline-none" aria-label="Perfil">
-        <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path></svg>
+      <!-- User Profile icon placeholder -->
+      <button class="text-[#4B533F] p-2 hover:bg-[#4B533F]/5 rounded-full transition-all cursor-pointer" aria-label="Perfil">
+        <i data-lucide="user" class="w-6 h-6 stroke-[1.5]"></i>
       </button>
     </div>
   </header>
 
-  <!-- Main Hero Block Content -->
-  <main class="w-full max-w-6xl mx-auto px-4 py-6 md:py-12 flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start flex-grow">
-    
-    <!-- Column 1: Gallery Layout -->
-    <div class="w-full md:col-span-7 flex flex-col gap-4 md:sticky md:top-28">
-      <!-- Main view frame slider panel -->
-      <div class="relative aspect-square w-full bg-[#E5E1D8]/20 rounded-2xl md:rounded-3xl border border-[#4B533F]/10 overflow-hidden shadow-2xs group">
-        <img id="main-gallery-img" src="./src/assets/images/watch_gold_main_1780538308870.png" alt="Relógio Édith Premium" class="w-full h-full object-cover transition-all duration-300" />
-        
-        <!-- Image indicators floating index circle -->
-        <span class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md text-[#F9F7F2] text-[10px] sm:text-xs font-mono font-bold px-3 py-1.5 rounded-full select-none tracking-widest leading-none">
-          <span id="gallery-current-num">1</span> / 4
-        </span>
-
-        <!-- Left navigation trigger arrow slider action button -->
-        <button onclick="prevGalleryImage()" class="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 bg-white/90 hover:bg-white text-[#4B533F] rounded-full flex items-center justify-center shadow-md active:scale-90 transition-all duration-150 focus:outline-none" aria-label="Anterior">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 stroke-current fill-none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path></svg>
-        </button>
-
-        <!-- Right navigation trigger arrow slider action button -->
-        <button onclick="nextGalleryImage()" class="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 bg-white/90 hover:bg-white text-[#4B533F] rounded-full flex items-center justify-center shadow-md active:scale-90 transition-all duration-150 focus:outline-none" aria-label="Próximo">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 stroke-current fill-none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path></svg>
+  <!-- Left slide-out drawer navigation menu -->
+  <div id="side-drawer" class="fixed inset-0 bg-black/40 z-50 transition-opacity duration-300 opacity-0 pointer-events-none backdrop-blur-xs flex" onclick="toggleMenu(false)">
+    <div class="w-full max-w-[280px] sm:max-w-xs bg-[#F9F7F2] h-full shadow-2xl p-6 sm:p-8 flex flex-col gap-6 sm:gap-8 border-r border-[#4B533F]/10 -translate-x-full transition-transform duration-300 relative" onclick="e => e.stopPropagation()">
+      <!-- Close panel button header -->
+      <div class="flex items-center justify-between pb-4 border-b border-[#4B533F]/10">
+        <div class="flex flex-col items-start select-none">
+          <span class="font-serif italic font-bold text-xl leading-none tracking-wide text-[#4B533F] lowercase">
+            all
+            <span class="block not-italic font-sans font-extrabold text-[9px] tracking-[0.3em] mt-0.5 text-[#A39171] uppercase">
+              inports
+            </span>
+          </span>
+        </div>
+        <button onclick="toggleMenu(false)" class="text-[#4B533F] p-1.5 hover:bg-[#4B533F]/5 rounded-full transition-all cursor-pointer" aria-label="Fechar">
+          <i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i>
         </button>
       </div>
 
-      <!-- Thumbnails Selector Bar -->
-      <div id="thumbnails-row" class="grid grid-cols-4 gap-2.5 sm:gap-3.5 select-none">
-        <!-- Injected via JavaScript dynamically -->
-      </div>
-
-      <!-- Real-time Golden-styled Countdown timer banner -->
-      <div class="mt-2 w-full bg-[#E5E1D8]/30 border border-[#A39171]/20 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-2.5 text-center sm:text-left">
-          <span class="text-lg">⏳</span>
-          <div>
-            <p class="text-xs font-bold uppercase text-[#4B533F] tracking-widest leading-none">Oferta Especial</p>
-            <p class="text-[10px] text-neutral-500 font-medium tracking-wide mt-1.5 leading-none">Termina em 12 de Junho, 23:59</p>
-          </div>
-        </div>
-        <div class="flex items-center gap-1.5 select-none">
-          <!-- Days -->
-          <div class="flex flex-col items-center bg-white border border-[#4B533F]/10 shadow-3xs rounded-lg px-2.5 py-1 min-w-[46px]">
-            <span id="countdown-days" class="text-sm font-mono font-bold text-[#4B533F] leading-none">00</span>
-            <span class="text-[8px] uppercase tracking-wider text-neutral-400 font-bold mt-1">Dias</span>
-          </div>
-          <!-- Hours -->
-          <div class="flex flex-col items-center bg-white border border-[#4B533F]/10 shadow-3xs rounded-lg px-2.5 py-1 min-w-[46px]">
-            <span id="countdown-hours" class="text-sm font-mono font-bold text-[#4B533F] leading-none">00</span>
-            <span class="text-[8px] uppercase tracking-wider text-neutral-400 font-bold mt-1">Horas</span>
-          </div>
-          <!-- Minutes -->
-          <div class="flex flex-col items-center bg-white border border-[#4B533F]/10 shadow-3xs rounded-lg px-2.5 py-1 min-w-[46px]">
-            <span id="countdown-minutes" class="text-sm font-mono font-bold text-[#4B533F] leading-none">00</span>
-            <span class="text-[8px] uppercase tracking-wider text-neutral-400 font-bold mt-1">Min</span>
-          </div>
-          <!-- Seconds -->
-          <div class="flex flex-col items-center bg-neutral-900 border border-[#4B533F]/10 shadow-2xs rounded-lg px-2.5 py-1 min-w-[46px]">
-            <span id="countdown-seconds" class="text-sm font-mono font-bold text-[#F9F7F2] leading-none">00</span>
-            <span class="text-[8px] uppercase tracking-wider text-neutral-300 font-bold mt-1">Seg</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Column 2: Product purchasing details side form options config -->
-    <div class="w-full md:col-span-5 flex flex-col gap-5 md:pt-2">
-      <!-- Breadcrumb indicator -->
-      <nav class="text-[10px] tracking-widest uppercase font-semibold text-neutral-400 flex items-center gap-1.5 select-none">
-        <span>Início</span>
-        <svg class="w-3 h-3 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path></svg>
-        <span>Coleção Vintage</span>
-        <svg class="w-3 h-3 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path></svg>
-        <span class="text-[#4B533F]">Relógio Édith</span>
+      <nav class="flex flex-col gap-4 sm:gap-5 text-[#2D2D2D] font-sans font-semibold text-base sm:text-lg">
+        <a href="#" class="hover:text-[#4B533F] transition-colors py-1.5 border-b border-[#4B533F]/5" onclick="toggleMenu(false)">Início</a>
+        <a href="#product-specs-anchor" class="hover:text-[#4B533F] transition-colors py-1.5 border-b border-[#4B533F]/5" onclick="toggleMenu(false)">Especificações</a>
+        <a href="#product-reviews" class="hover:text-[#4B533F] transition-colors py-1.5 border-b border-[#4B533F]/5" onclick="toggleMenu(false)">Avaliações</a>
+        <a href="#product-desc" class="hover:text-[#4B533F] transition-colors py-1.5 border-b border-[#4B533F]/5" onclick="toggleMenu(false)">Descrição</a>
       </nav>
 
-      <!-- Main Product Identity Headers -->
-      <div class="flex flex-col gap-2">
-        <div class="flex items-center gap-2 select-none">
-          <span class="text-[10px] font-bold bg-[#A39171]/15 text-[#A39171] uppercase tracking-[0.25em] px-3 py-1 rounded-full border border-[#A39171]/25">
-            Destaque de Luxo
-          </span>
-          <span class="flex items-center gap-1.5 text-xs font-semibold text-[#4B533F]">
-            ✨ Clássico Vintage
-          </span>
+      <div class="mt-auto flex flex-col gap-3.5 border-t border-[#4B533F]/10 pt-5">
+        <div class="flex items-center gap-3 text-xs sm:text-sm text-[#4B533F]">
+          <i data-lucide="shield-check" class="w-5 h-5 text-[#A39171]"></i>
+          <span>Compra 100% Segura</span>
         </div>
-        
-        <h1 class="text-3xl sm:text-4xl font-serif font-light text-[#1A1A1A] leading-tight tracking-normal mt-1">
-          Relógio <span class="italic font-bold text-[#4B533F]">Édith</span>
-        </h1>
-        
-        <p class="text-xs sm:text-sm text-neutral-500 font-light italic leading-relaxed">
-          Design oval clássico e sofisticado inspirado na joalheria vintage. O luxo silencioso que expressa delicadeza e elegância em cada detalhe.
-        </p>
-      </div>
-
-      <!-- Pricing metrics panel box details card -->
-      <div class="bg-[#F3EFE6]/65 border border-[#4B533F]/10 rounded-2xl p-5 select-none">
-        <div class="flex items-center gap-3">
-          <span class="text-xs font-bold text-neutral-400 line-through">R$ 119,90</span>
-          <span id="price-main-badge" class="font-serif text-3xl font-bold text-[#4B533F]">R$ 89,90</span>
-          <span class="text-[10px] font-bold uppercase tracking-widest bg-emerald-500/10 text-emerald-600 px-2.5 py-1 rounded-md">25% off</span>
+        <div class="flex items-center gap-3 text-xs sm:text-sm text-[#4B533F]">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-[#4B533F]"></i>
+          <span>Entrega de Cortesia Garantida</span>
         </div>
-        <p class="text-xs text-[#2D2D2D]/75 italic mt-1.5 flex items-center gap-1.5 font-light">
-          💳 ou em até <strong class="font-semibold text-[#1A1A1A]">3x de R$ 29,97</strong> sem juros no cartão
-        </p>
-      </div>
-
-      <!-- Interactive Color Picker selection box layout -->
-      <div class="flex flex-col gap-2.5 border-t border-[#4B533F]/10 pt-4">
-        <div class="flex items-center justify-between">
-          <label class="text-xs uppercase font-bold tracking-widest text-[#4B533F]">Escolha sua Cor:</label>
-          <span id="color-label-indicator" class="text-xs font-bold tracking-wide text-[#A39171]">Dourado</span>
-        </div>
-        <div class="flex gap-3 mt-1 select-none">
-          <!-- Button Dourado -->
-          <button id="color-btn-dourado" onclick="selectProductColor('Dourado')" class="flex-1 bg-white border-2 border-[#4B533F] rounded-xl py-3 px-4 flex items-center gap-3 shadow-2xs hover:bg-[#F9F7F2]/50 cursor-pointer transition-all duration-200 focus:outline-none">
-            <span class="w-4 h-4 rounded-full bg-gradient-to-tr from-[#A39171] to-[#E2D2B3] shrink-0 border border-black/10"></span>
-            <div class="text-left">
-              <p class="text-xs font-bold text-[#1A1A1A] leading-none">Dourado</p>
-              <p class="text-[9px] text-[#A39171] font-semibold mt-1">Mais pedido (Estoque Límitado)</p>
-            </div>
-            <svg class="w-4.5 h-4.5 ml-auto text-[#4B533F]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-          </button>
-          
-          <!-- Button Prata -->
-          <button id="color-btn-prata" onclick="selectProductColor('Prata')" class="flex-1 bg-white hover:bg-[#F9F7F2] border border-[#4B533F]/20 rounded-xl py-3 px-4 flex items-center gap-3 shadow-3xs cursor-pointer transition-all duration-200 focus:outline-none">
-            <span class="w-4 h-4 rounded-full bg-gradient-to-tr from-neutral-300 to-neutral-100 shrink-0 border border-black/10"></span>
-            <div class="text-left">
-              <p class="text-xs font-bold text-[#1A1A1A] leading-none">Prata</p>
-              <p class="text-[9px] text-neutral-400 font-medium mt-1">Sutil & Clássico (Poucas unidades)</p>
-            </div>
-            <svg id="prata-checkmark" class="w-4.5 h-4.5 ml-auto text-[#4B533F] hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Promo Badge Banner bar -->
-      <div class="w-full bg-[#4B533F]/5 border border-[#4B533F]/15 rounded-2xl p-4 flex items-start gap-3.5 select-none mt-2">
-        <span class="text-xl sm:text-2xl mt-0.5">🧴</span>
-        <div class="text-[#2D2D2D] leading-relaxed">
-          <p class="text-xs font-bold uppercase tracking-widest text-[#4B533F]">FRETE GRÁTIS + CORTESIA</p>
-          <p class="text-[11px] sm:text-xs text-[#2D2D2D]/85 mt-1 font-light">
-            Garantimos envio seguro imediato gratuito de cortesia de fábrica com código de rastreamento para todo o país hoje.
-          </p>
-        </div>
-      </div>
-
-      <!-- Main Purchase Link Anchor styled exactly like AETERNA premium buttons (Swaps checkout links dynamically) -->
-      <a id="checkout-direct-anchor" href="https://seguro.allinports.shop/r/6BGD73TXT1" target="_blank" rel="noopener noreferrer" class="w-full bg-[#4B533F] hover:bg-[#5A5A40] text-white text-xs sm:text-sm font-bold uppercase py-4 px-8 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] cursor-pointer tracking-[0.2em] text-center flex items-center justify-center gap-2.5 mt-2">
-        <svg class="w-5 h-5 shrink-0 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124l-.09-5.594a1.875 1.875 0 00-1.802-1.844l-11.751-.044m11.751-1.25V5.25A1.125 1.125 0 0019.5 4.125h-15a1.125 1.125 0 00-1.125 1.125v1.25m11.751-1.25h1.125c.621 0 1.129.504 1.09 1.124l-.09 3.094c-.039.62-.547 1.124-1.124 1.124h-1.5"></path></svg>
-        <span>COMPRAR COM FRETE GRÁTIS</span>
-      </a>
-
-      <!-- Trust assurances Badges list -->
-      <div class="grid grid-cols-3 gap-2.5 py-3 mt-2 border-t border-b border-[#4B533F]/10 text-center select-none">
-        <div class="flex flex-col items-center gap-1">
-          <svg class="w-5 h-5 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"></path></svg>
-          <span class="text-[9px] font-bold uppercase tracking-widest text-[#4B533F]">COMPRA 100% SEGURA</span>
-        </div>
-        <div class="flex flex-col items-center gap-1 border-l border-r border-[#4B533F]/10">
-          <svg class="w-5 h-5 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.656 48.656 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7C4.75 9.547 4.704 10.768 4.704 12s.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.092-1.209.138-2.43.138-3.662z"></path></svg>
-          <span class="text-[9px] font-bold uppercase tracking-widest text-[#4B533F]">ENVIO COM RASTREIO</span>
-        </div>
-        <div class="flex flex-col items-center gap-1">
-          <svg class="w-5 h-5 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"></path></svg>
-          <span class="text-[9px] font-bold uppercase tracking-widest text-[#4B533F]">DEVOLUÇÃO EM 7 DIAS</span>
+        <div class="flex items-center gap-3 text-xs sm:text-sm text-[#4B533F]">
+          <i data-lucide="help-circle" class="w-5 h-5 text-[#4B533F]"></i>
+          <span>Suporte Total do Cliente</span>
         </div>
       </div>
     </div>
-  </main>
+  </div>
 
-  <!-- Section 2: Core Description Features Spec list -->
-  <section id="product-desc" class="w-full bg-[#E5E1D8]/20 py-16 border-t border-b border-[#4B533F]/10">
-    <div class="max-w-3xl mx-auto px-6 font-sans text-[#2D2D2D]">
-      <!-- Section Heading Title -->
-      <div class="text-center mb-8 sm:mb-10 flex flex-col items-center gap-1 select-none">
-        <span class="text-sm sm:text-base font-serif font-light text-[#2D2D2D]/70 tracking-wide">
-          A Arte nos Detalhes
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-serif italic font-bold text-[#4B533F] tracking-tight mt-1">
-          Relógio Édith
-        </h2>
-      </div>
-
-      <!-- Content Paragraph Block -->
-      <div class="flex flex-col gap-6 text-sm sm:text-base leading-relaxed text-[#2D2D2D]/95">
-        <p class="font-serif italic text-base sm:text-lg text-[#4B533F] bg-[#E5E1D8]/45 border border-[#4B533F]/10 p-4 sm:p-5 rounded-2xl shadow-2xs select-none text-center">
-          "Pequeno no pulso. Grande no impacto."
-        </p>
-
-        <p class="font-light text-center sm:text-left">
-          O modelo <strong class="font-semibold text-[#1A1A1A]">L737</strong> tem tudo o que um relógio de alta classe feminina precisa ter: caixa oval ultrafina, pulseira em elos flexíveis de aço e mostrador minimalista que eleva qualquer visual do casual ao sofisticado.
-        </p>
-
-        <p class="font-light text-center sm:text-left">
-          Para quem prefere a sutileza de acessórios que expressam luxo silencioso e impressionam em cada gesto.
-        </p>
-
-        <!-- Dynamic Tech Specs Grid element inside screenshot -->
-        <div class="mt-8 border-t border-[#4B533F]/10 pt-8">
-          <h3 class="font-semibold text-[#1A1A1A] text-xs sm:text-sm mb-4 flex items-center justify-center sm:justify-start gap-2 uppercase tracking-wider">
-            <svg class="w-4 h-4 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path></svg>
-            Especificações Técnicas:
-          </h3>
-          <div class="bg-white border border-[#4B533F]/10 rounded-2xl overflow-hidden shadow-2xs">
-            <table class="w-full text-left border-collapse text-xs sm:text-sm font-sans">
-              <tbody id="specs-table-body">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Guide Resistance to water guide bar -->
-        <div class="mt-8">
-          <h3 class="font-bold text-[#4B533F] text-[10px] sm:text-xs uppercase tracking-[0.25em] mb-3 flex items-center justify-center sm:justify-start gap-2">
-            <svg class="w-4 h-4 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"></path></svg>
-            GUIA DE RESISTÊNCIA À ÁGUA
-          </h3>
-          <p class="text-xs sm:text-sm text-[#2D2D2D]/80 pl-4 sm:pl-5 border-l-2 border-[#A39171] font-light text-center sm:text-left">
-            <strong class="font-semibold text-[#1A1A1A]">3 ATM:</strong> Adequado para respingo diário, respingos leves de torneira, chuva leve e lavagem de mãos. Não adequado para mergulho ou banho de piscina.
-          </p>
-        </div>
-
-        <!-- Attention warning notice box -->
-        <div class="mt-6 p-4 sm:p-5 bg-[#E5E1D8]/35 border border-[#A39171]/20 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-3.5 text-center sm:text-left">
-          <svg class="w-5 h-5 text-[#A39171] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 111.063.854l-.041.02-.01.008a1.75 1.75 0 11-2.25-2.25l.01.008c.307.21.674.331 1.07.331zm0 3c0 .138-.112.25-.25.25h-.5a.25.25 0 01-.25-.25v-1.5a.25.25 0 01.25-.25h.5c.138 0 .25.112.25.25v1.5z"></path></svg>
-          <div class="text-xs sm:text-sm text-[#2D2D2D] leading-relaxed font-sans">
-            <strong class="font-bold uppercase tracking-wider text-[10px] text-[#4B533F] block mb-1">ATENÇÃO:</strong>
-            Para preservar a cor, acabamento e brilho duradouro do seu relógio vintage, evite passar produtos químicos no mostrador ou na pulseira, como perfumes, hidratantes e álcool em gel diretamente.
-          </div>
-        </div>
-
-        <!-- Sign-off decorative sticker in the center -->
-        <div class="flex justify-center w-full mt-8">
-          <p class="text-center font-bold text-[#4B533F] text-[10px] sm:text-xs select-none uppercase tracking-wider border border-[#A39171]/30 rounded-full py-2.5 px-5 sm:py-3 sm:px-6 bg-[#F9F7F2] shadow-3xs cursor-default">
-            Dourado ou prata escolha o que combina com você. Ou os dois.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: Customer Reviews Feedback List Block -->
-  <section id="product-reviews" class="w-full bg-[#F9F7F2] py-16 border-t border-b border-[#4B533F]/10">
-    <div class="max-w-4xl mx-auto px-6">
+  <!-- Main View Grid Content Area -->
+  <main class="flex-1 w-full flex flex-col">
+    <!-- Top Fold: Gallery & Buy Selector details -->
+    <section class="w-full max-w-6xl mx-auto px-4 py-6 md:py-12 flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
       
-      <!-- Section Headline & Ratings Merged Banner -->
-      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#4B533F]/10 pb-6">
-        <div class="flex flex-col gap-2.5 text-center md:text-left animate-in fade-in">
-          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-[#1A1A1A] tracking-tight">
-            O que dizem sobre o Édith
-          </h3>
-          <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 justify-center md:justify-start">
-            <div class="flex text-[#A39171] gap-0.5 pb-0.5">
-              <svg class="w-4 h-4 fill-current text-[#A39171]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              <svg class="w-4 h-4 fill-current text-[#A39171]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              <svg class="w-4 h-4 fill-current text-[#A39171]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              <svg class="w-4 h-4 fill-current text-[#A39171]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              <svg class="w-4 h-4 fill-current text-[#A39171]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+      <!-- Column 1: Image Gallery (Takes 7 cols on Desktop, sticky position) -->
+      <div class="w-full md:col-span-7 flex flex-col gap-4 md:sticky md:top-28">
+        
+        <!-- Responsive Gallery container -->
+        <div class="flex flex-col md:flex-row gap-3 sm:gap-4 w-full h-[360px] xs:h-[440px] md:h-[500px]">
+          <!-- Thumbnails Selector Panel (Bottom row on mobile, left column on desktop) -->
+          <div class="flex flex-row md:flex-col items-center justify-between py-1 px-2.5 md:py-2 md:px-1.5 w-full md:w-20 lg:w-24 h-16 md:h-full shrink-0 border border-[#4B533F]/10 rounded-2xl bg-[#E5E1D8]/20 p-1.5 shadow-2xs order-last md:order-first">
+            <!-- Scroll up arrow indicator (Desktop only) -->
+            <button onclick="scrollGalleryIndex(-1)" class="hidden md:flex p-1.5 hover:bg-[#4B533F]/5 rounded-full transition-all text-[#4B533F]" aria-label="Anterior">
+              <i data-lucide="chevron-up" class="w-4 h-4"></i>
+            </button>
+
+            <!-- Thumbnails items grid list anchor -->
+            <div id="thumbnails-list" class="flex flex-row md:flex-col gap-2 md:gap-2.5 overflow-x-auto md:overflow-x-hidden overflow-y-hidden md:overflow-y-auto no-scrollbar scroll-smooth w-full h-full items-center justify-center md:justify-start py-1 md:py-0">
+              <!-- Dynamically populated via JS -->
             </div>
-            <span class="text-xs sm:text-sm font-medium text-[#2D2D2D]/75">
-              1.410 Depoimentos de Clientes em todo o Brasil
+
+            <!-- Scroll down arrow indicator (Desktop only) -->
+            <button onclick="scrollGalleryIndex(1)" class="hidden md:flex p-1.5 hover:bg-[#4B533F]/5 rounded-full transition-all text-[#4B533F]" aria-label="Próximo">
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Hero Main Showcase Focus Viewport Frame -->
+          <div class="flex-1 relative rounded-2xl border border-[#4B533F]/10 overflow-hidden bg-[#E5E1D8]/10 flex items-center justify-center group shadow-xs">
+            <img id="main-active-img" src="./src/assets/images/watch_gold_main_1780538308870.png" alt="Relógio Édith" class="w-full h-full object-cover transition-all duration-300" />
+            
+            <!-- Floating Navigation overlay arrows -->
+            <button onclick="scrollGalleryIndex(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 hover:bg-white text-[#4B533F] flex items-center justify-center border border-[#4B533F]/15 shadow-sm backdrop-blur-xs transition-colors hover:scale-105 active:scale-95 cursor-pointer z-10" aria-label="Imagem anterior">
+              <i data-lucide="chevron-left" class="w-5 h-5 stroke-[2]"></i>
+            </button>
+            <button onclick="scrollGalleryIndex(1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 hover:bg-white text-[#4B533F] flex items-center justify-center border border-[#4B533F]/15 shadow-sm backdrop-blur-xs transition-colors hover:scale-105 active:scale-95 cursor-pointer z-10" aria-label="Próxima imagem">
+              <i data-lucide="chevron-right" class="w-5 h-5 stroke-[2]"></i>
+            </button>
+
+            <!-- Image indicators bubble tag -->
+            <div id="gallery-counter-tag" class="absolute bottom-3 right-3 bg-[#4B533F]/80 text-white text-[10px] sm:text-xs px-2.5 py-1 rounded-full font-bold backdrop-blur-xs tracking-wider select-none font-mono">
+              1 / 4
+            </div>
+          </div>
+        </div>
+
+        <!-- Alert badge note -->
+        <div class="hidden md:flex items-center gap-2.5 bg-[#E5E1D8]/20 border border-[#4B533F]/10 p-3.5 rounded-2xl text-xs text-[#2D2D2D]/80 select-none">
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#A39171] shrink-0"></i>
+          <span>Dicas: Alterne as cores no menu ao lado para conferir as fotos em alta resolução de cada banho (Dourado Champagne ou Prata Pure).</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Buy details form console (Takes 5 cols on Desktop) -->
+      <div id="buy-info-column" class="w-full md:col-span-5 flex flex-col gap-4 font-sans text-[#2D2D2D]">
+        
+        <!-- Breadcrumb & category labels -->
+        <div class="flex flex-col gap-1">
+          <span class="text-[#A39171] uppercase tracking-[0.3em] text-xs font-bold font-sans italic">
+            Boutique All Inports
+          </span>
+          <!-- Dynamic high fidelity descriptive headers -->
+          <h1 class="text-3xl sm:text-4xl md:text-[40px] font-serif font-light leading-[1.1] text-[#1A1A1A] mt-1.5">
+            Relógio Feminino Oval <br/>
+            <span id="title-color-suffix" class="italic font-bold text-[#4B533F]">Dourado Édith</span>
+          </h1>
+        </div>
+
+        <!-- Subelement short text summary list -->
+        <p class="font-sans text-sm sm:text-base leading-relaxed text-[#2D2D2D]/80 font-light">
+          Caixa oval de luxo com perfil ultrafino de apenas 7mm, pulseira elegante em elos de aço inoxidável e mostrador minimalista projetado para restaurar a sofisticação no pulso da mulher moderna.
+        </p>
+
+        <!-- Dynamic reactive Color Selector Buttons container -->
+        <div class="flex items-center gap-3.5 py-1.5 select-none border-t border-b border-[#4B533F]/10 my-1">
+          <span class="text-xs uppercase tracking-widest font-semibold opacity-70 text-[#2D2D2D]">Cor:</span>
+          <div class="flex gap-2.5">
+            <button id="color-btn-gold" onclick="selectColor('Dourado')" class="px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer bg-[#4B533F] text-white shadow-sm ring-4 ring-[#4B533F]/15">
+              Dourado
+            </button>
+            <button id="color-btn-silver" onclick="selectColor('Prata')" class="px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer border border-[#4B533F]/20 hover:border-[#4B533F] bg-white text-[#4B533F]">
+              Prata
+            </button>
+          </div>
+        </div>
+
+        <!-- Golden Price display section -->
+        <div class="bg-[#E5E1D8]/35 rounded-3xl p-5 border border-[#4B533F]/10 flex flex-col gap-1.5 shadow-2xs my-1 select-none">
+          <span class="text-[#2D2D2D]/60 text-xs sm:text-sm font-medium uppercase tracking-wider">
+            De <span class="line-through">R$ 119,90</span> por apenas
+          </span>
+          <div class="flex items-baseline gap-2.5">
+            <span class="text-4xl sm:text-5xl font-extrabold text-[#1A1A1A] font-serif tracking-tight">
+              R$ 89,90
+            </span>
+            <span class="text-[11px] font-bold text-[#4B533F] bg-[#4B533F]/10 border border-[#4B533F]/25 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              Economize 25%
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-[#4B533F] font-bold flex items-center gap-2 mt-0.5">
+            <i data-lucide="credit-card" class="w-4 h-4 text-[#A39171]"></i>
+            ou 12x de <strong class="text-[#1A1A1A] font-extrabold text-sm">R$ 7,97</strong> sem juros no cartão
+          </p>
+        </div>
+
+        <!-- Embedded promo countdown timer row (dia dos namorados offer) -->
+        <div class="w-full bg-[#E5E1D8]/65 text-[#2D2D2D] rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 select-none border border-[#4B533F]/10 shadow-xs">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-[#A39171]">Oferta Especial</span>
+            <h4 class="font-serif italic font-extrabold text-[22px] text-[#4B533F] leading-tight mt-0.5">
+              Dia dos Namorados
+            </h4>
+            <p class="text-xs font-semibold text-neutral-600">
+              Estoque limitado premium
+            </p>
+          </div>
+          <div class="flex flex-col sm:items-end text-left sm:text-right gap-1.5">
+            <span class="text-[10px] font-bold text-[#4B533F] uppercase tracking-wider flex items-center gap-1 sm:justify-end">
+              <i data-lucide="clock" class="w-3.5 h-3.5 shrink-0 animate-pulse"></i>
+              Termina em <strong class="text-[#4B533F] font-extrabold">12 de Junho, 23:59</strong>
+            </span>
+            <!-- Live Ticking Clock Box components -->
+            <div class="flex gap-1.5 mt-0.5 font-mono text-xs font-bold text-[#4B533F]">
+              <span id="timer-day" class="bg-white/95 px-2 py-0.5 rounded-lg shadow-2xs border border-[#4B533F]/15">00d</span>
+              <span class="text-[#A39171]/80 self-center">:</span>
+              <span id="timer-hour" class="bg-white/95 px-2 py-0.5 rounded-lg shadow-2xs border border-[#4B533F]/15">00h</span>
+              <span class="text-[#A39171]/80 self-center">:</span>
+              <span id="timer-min" class="bg-white/95 px-2 py-0.5 rounded-lg shadow-2xs border border-[#4B533F]/15">00m</span>
+              <span class="text-[#A39171]/80 self-center">:</span>
+              <span id="timer-sec" class="bg-white/95 px-2 py-0.5 rounded-lg shadow-2xs border border-[#4B533F]/15 text-[#A39171] font-extrabold">00s</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buy primary AETERNA Link Anchor (updated checkout links) -->
+        <a id="btn-buy-checkout" href="https://seguro.allinports.shop/r/6BGD73TXT1" target="_blank" rel="noopener noreferrer" class="w-full bg-[#4B533F] hover:bg-[#5A5A40] text-white text-xs sm:text-sm font-bold uppercase py-4 px-8 rounded-full transition-all duration-250 shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] cursor-pointer tracking-[0.2em] text-center flex items-center justify-center gap-2.5 mt-2">
+          <i data-lucide="truck" class="w-5 h-5 shrink-0 animate-bounce"></i>
+          <span>COMPRAR COM FRETE GRÁTIS</span>
+        </a>
+
+        <!-- Trust assurances small markers row -->
+        <div class="grid grid-cols-3 gap-2.5 py-3 mt-2 border-t border-b border-[#4B533F]/10">
+          <div class="flex flex-col items-center text-center p-1.5 font-sans">
+            <i data-lucide="shield-check" class="w-5 h-5 text-[#4B533F] mb-1.5"></i>
+            <span class="text-[9px] font-bold text-[#4B533F] uppercase tracking-widest">Compra Segura</span>
+            <span class="text-[9px] text-[#A39171] mt-0.5 italic">Criptografia SSL</span>
+          </div>
+          <div class="flex flex-col items-center text-center p-1.5 border-l border-r border-[#4B533F]/10 font-sans">
+            <i data-lucide="truck" class="w-5 h-5 text-[#4B533F] mb-1.5"></i>
+            <span class="text-[9px] font-bold text-[#4B533F] uppercase tracking-widest">Frete Cortesia</span>
+            <span class="text-[9px] text-[#A39171] mt-0.5 italic">Prazo 7-15 dias</span>
+          </div>
+          <div class="flex flex-col items-center text-center p-1.5 font-sans">
+            <i data-lucide="help-circle" class="w-5 h-5 text-[#4B533F] mb-1.5"></i>
+            <span class="text-[9px] font-bold text-[#4B533F] uppercase tracking-widest">Suporte Total</span>
+            <span class="text-[9px] text-[#A39171] mt-0.5 italic">Chat de Ouvidoria</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mid Section 1: Customer Interactive Reviews -->
+    <section id="product-reviews font-sans" class="w-full bg-[#F9F7F2] py-16 border-t border-b border-[#4B533F]/10">
+      <div class="max-w-4xl mx-auto px-6">
+        
+        <!-- Ratings Headline Indicator banner -->
+        <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#4B533F]/10 pb-6">
+          <div class="flex flex-col gap-2.5 text-center md:text-left">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-[#1A1A1A] tracking-tight">
+              O que dizem sobre o Édith
+            </h3>
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 justify-center md:justify-start">
+              <div class="flex text-[#A39171] gap-0.5 pb-0.5 select-none">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <span class="text-xs sm:text-sm font-medium text-[#2D2D2D]/75 block">
+                1.410 Depoimentos de Clientes em todo o Brasil
+              </span>
+            </div>
+          </div>
+          
+          <div class="flex items-center justify-center gap-2 bg-[#4B533F]/5 px-4 py-2 rounded-full border border-[#4B533F]/10 shrink-0 self-center md:self-end select-none">
+            <i data-lucide="check-circle" class="w-4 h-4 text-[#4B533F] fill-white"></i>
+            <span class="text-[10px] sm:text-xs font-bold text-[#4B533F] uppercase tracking-wider">
+              100% de Satisfação Garantida
             </span>
           </div>
         </div>
 
-        <div class="flex items-center justify-center gap-2 bg-[#4B533F]/5 px-4 py-2 rounded-full border border-[#4B533F]/10 shrink-0 self-center md:self-end">
-          <svg class="w-3.5 h-3.5 text-[#4B533F] fill-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"></path></svg>
-          <span class="text-[10px] sm:text-xs font-bold text-[#4B533F] uppercase tracking-wider">
-            100% de Satisfação Garantida
-          </span>
+        <!-- Feed Reviews List container -->
+        <div id="reviews-feed-list" class="flex flex-col gap-6 sm:gap-8">
+          <!-- Populated dynamically via JS -->
         </div>
-      </div>
 
-      <!-- Live Reviews Listings -->
-      <div id="reviews-feed-container" class="flex flex-col gap-6 sm:gap-8">
-        <!-- Injected dynamically via JS -->
-      </div>
+        <!-- Reviews actions buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 w-full max-w-lg mx-auto">
+          <button id="btn-toggle-reviews" onclick="expandReviews()" class="w-full sm:w-auto px-7 py-3.5 border border-[#4B533F]/25 hover:border-[#4B533F] rounded-full text-[11px] font-bold uppercase tracking-[0.18em] text-[#4B533F] bg-white hover:bg-[#E5E1D8]/20 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-2xs outline-none">
+            <span id="label-reviews-btn">ver mais depoimentos</span>
+            <i id="icon-reviews-btn" data-lucide="chevron-down" class="w-3.5 h-3.5 text-[#A39171]"></i>
+          </button>
 
-      <!-- Action Footer (Expand lists + leave review forms) -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 w-full max-w-lg mx-auto">
-        <button id="btn-toggle-reviews" onclick="toggleReviewsVisibility()" class="w-full sm:w-auto px-7 py-3.5 border border-[#4B533F]/25 hover:border-[#4B533F] rounded-full text-[11px] font-bold uppercase tracking-[0.18em] text-[#4B533F] bg-white hover:bg-[#E5E1D8]/20 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-2xs">
-          <span id="label-toggle-reviews">ver mais depoimentos</span>
-          <svg id="icon-toggle-reviews" class="w-3.5 h-3.5 shrink-0 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
-        </button>
+          <button onclick="toggleAddReviewForm(true)" class="w-full sm:w-auto px-7 py-3.5 bg-[#4B533F] hover:bg-[#5A5A40] text-[#F9F7F2] rounded-full text-[11px] font-bold uppercase tracking-[0.18em] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs outline-none">
+            <i data-lucide="plus-circle" class="w-4 h-4 text-[#A39171]"></i>
+            <span>Escrever depoimento</span>
+          </button>
+        </div>
 
-        <button onclick="scrollAndOpenReviewForm()" class="w-full sm:w-auto px-7 py-3.5 bg-[#4B533F] hover:bg-[#5A5A40] text-[#F9F7F2] rounded-full text-[11px] font-bold uppercase tracking-[0.18em] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs">
-          <svg class="w-4 h-4 text-[#A39171]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Escrever depoimento</span>
-        </button>
-      </div>
-
-      <!-- Add Review Feedback Input Form panel -->
-      <div id="write-review-form-panel" class="hidden mt-8 p-5 sm:p-6 bg-white border border-[#4B533F]/10 rounded-2xl flex-col gap-4 w-full max-w-lg mx-auto shadow-xs duration-200">
-        <h4 class="font-serif font-bold text-[#1A1A1A] text-base sm:text-lg text-center sm:text-left">Deixe sua Opinião Sincera</h4>
-        
-        <form onsubmit="handleReviewSubmit(event)" class="flex flex-col gap-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            <div>
-              <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Seu Nome Completo</label>
-              <input id="input-review-name" type="text" required placeholder="Ex: Amanda Silva" class="w-full text-sm px-4 py-2.5 rounded-xl border border-[#4B533F]/20 bg-white focus:ring-1 focus:ring-[#4B533F] focus:border-[#4B533F] outline-none font-sans text-[#2D2D2D]" />
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Avaliação (Estrelas)</label>
-              <div class="flex gap-1.5 py-1.5">
-                <input id="input-review-stars" type="hidden" value="5" />
-                <div class="flex gap-1">
-                  <button type="button" onclick="setFormStars(1)" class="form-star-btn text-[#A39171] focus:outline-none select-none"><svg id="form-star-1" class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></button>
-                  <button type="button" onclick="setFormStars(2)" class="form-star-btn text-[#A39171] focus:outline-none select-none"><svg id="form-star-2" class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></button>
-                  <button type="button" onclick="setFormStars(3)" class="form-star-btn text-[#A39171] focus:outline-none select-none"><svg id="form-star-3" class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></button>
-                  <button type="button" onclick="setFormStars(4)" class="form-star-btn text-[#A39171] focus:outline-none select-none"><svg id="form-star-4" class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></button>
-                  <button type="button" onclick="setFormStars(5)" class="form-star-btn text-[#A39171] focus:outline-none select-none"><svg id="form-star-5" class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></button>
+        <!-- Add Customer Feedback Form Overlay panel -->
+        <div id="review-form-overlay" class="hidden mt-8 p-5 sm:p-6 bg-white border border-[#4B533F]/10 rounded-2xl flex-col gap-4 w-full max-w-lg mx-auto shadow-xs scroll-mt-24 transition-all duration-300">
+          <h4 class="font-serif font-bold text-[#1A1A1A] text-base sm:text-lg text-center sm:text-left">Deixe sua Opinião Sincera</h4>
+          
+          <form onsubmit="handleReviewFormSubmit(event)" class="flex flex-col gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div>
+                <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Seu Nome Completo</label>
+                <input id="form-input-name" type="text" required placeholder="Ex: Amanda Silva" class="w-full text-sm px-4 py-2.5 rounded-xl border border-[#4B533F]/20 bg-white focus:ring-1 focus:ring-[#4B533F] focus:border-[#4B533F] outline-none font-sans text-[#2D2D2D]" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Avaliação (Estrelas)</label>
+                <div class="flex gap-1.5 py-1.5" id="form-star-box-selection">
+                  <input type="hidden" id="form-star-count" value="5" />
+                  <button type="button" onclick="setStarRating(1)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-1"></i>
+                  </button>
+                  <button type="button" onclick="setStarRating(2)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-2"></i>
+                  </button>
+                  <button type="button" onclick="setStarRating(3)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-3"></i>
+                  </button>
+                  <button type="button" onclick="setStarRating(4)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-4"></i>
+                  </button>
+                  <button type="button" onclick="setStarRating(5)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-5"></i>
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div>
-            <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Seu Comentário ou Crítica</label>
-            <textarea id="input-review-comment" required rows="3" placeholder="Compartilhe como foi sua experiência com o acabamento, cor e embalagem do produto de luxo..." class="w-full text-sm px-4 py-3 rounded-xl border border-[#4B533F]/20 bg-white focus:ring-1 focus:ring-[#4B533F] focus:border-[#4B533F] outline-none font-sans resize-none text-[#2D2D2D]"></textarea>
-          </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Seu Comentário ou Crítica</label>
+              <textarea id="form-input-comment" required rows="3" placeholder="Compartilhe como foi sua experiência com o acabamento, cor e embalagem do produto de luxo..." class="w-full text-sm px-4 py-3 rounded-xl border border-[#4B533F]/20 bg-white focus:ring-1 focus:ring-[#4B533F] focus:border-[#4B533F] outline-none font-sans resize-none text-[#2D2D2D]"></textarea>
+            </div>
 
-          <!-- Bottom Forms Buttons -->
-          <div class="flex items-center gap-3 justify-end mt-1">
-            <button type="button" onclick="toggleFormVisibility(false)" class="text-neutral-500 hover:text-[#1A1A1A] font-semibold text-xs px-4 py-2 uppercase tracking-wider">
-              Cancelar
-            </button>
-            <button type="submit" class="bg-[#4B533F] hover:bg-[#5A5A40] text-white font-bold text-xs px-6 py-2.5 rounded-full transition-colors uppercase tracking-wider">
-              Enviar Comentário
-            </button>
-          </div>
-        </form>
+            <div class="flex items-center gap-3 justify-end mt-1">
+              <button type="button" onclick="toggleAddReviewForm(false)" class="text-neutral-500 hover:text-[#1A1A1A] font-semibold text-xs px-4 py-2 uppercase tracking-wider outline-none cursor-pointer">
+                Cancelar
+              </button>
+              <button type="submit" class="bg-[#4B533F] hover:bg-[#5A5A40] text-white font-bold text-xs px-6 py-2.5 rounded-full transition-colors uppercase tracking-wider outline-none cursor-pointer">
+                Enviar Comentário
+              </button>
+            </div>
+          </form>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer block -->
-  <footer class="w-full bg-[#1A1A1A] text-neutral-400 py-12 px-6 border-t border-[#4B533F]/20 select-none">
-    <div class="max-w-4xl mx-auto flex flex-col items-center gap-6 text-center">
-      
-      <!-- Logo brand metadata in footer -->
+    <!-- Mid Section 2: Detailed Specifications Guide -->
+    <section id="product-desc" class="w-full bg-[#E5E1D8]/20 py-16 border-t border-b border-[#4B533F]/10">
+      <div id="product-specs-anchor" class="max-w-3xl mx-auto px-6 font-sans text-[#2D2D2D]">
+        
+        <!-- Headers -->
+        <div class="text-center mb-8 sm:mb-10 flex flex-col items-center gap-1 select-none">
+          <span class="text-sm sm:text-base font-serif font-light text-[#2D2D2D]/70 tracking-wide">
+            A Arte nos Detalhes
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-serif italic font-bold text-[#4B533F] tracking-tight mt-1">
+            Relógio Édith
+          </h2>
+        </div>
+
+        <!-- Copy and Table metrics -->
+        <div class="flex flex-col gap-6 text-sm sm:text-base leading-relaxed text-[#2D2D2D]/95">
+          <p class="font-serif italic text-base sm:text-lg text-[#4B533F] bg-[#E5E1D8]/45 border border-[#4B533F]/10 p-4 sm:p-5 rounded-2xl shadow-2xs select-none text-center">
+            "Pequeno no pulso. Grande no impacto."
+          </p>
+
+          <p class="font-light text-center sm:text-left">
+            O modelo <strong class="font-semibold text-[#1A1A1A]">L737</strong> tem tudo o que um relógio de alta classe feminina precisa ter: caixa oval ultrafina, pulseira em elos flexíveis de aço e mostrador minimalista que eleva qualquer visual do casual ao sofisticado.
+          </p>
+
+          <p class="font-light text-center sm:text-left">
+            Para quem prefere a sutileza de acessórios que expressam luxo silencioso e impressionam em cada gesto.
+          </p>
+
+          <!-- Specifications Bullet list / Grid Table -->
+          <div class="mt-8 border-t border-[#4B533F]/10 pt-8">
+            <h3 class="font-semibold text-[#1A1A1A] text-xs sm:text-sm mb-4 flex items-center justify-center sm:justify-start gap-2 uppercase tracking-wider">
+              <i data-lucide="file-text" class="w-4 h-4 text-[#A39171]"></i>
+              Especificações Técnicas:
+            </h3>
+
+            <div class="bg-[#F9F7F2] rounded-2xl border border-[#4B533F]/10 overflow-hidden shadow-2xs">
+              <table class="w-full text-xs sm:text-sm text-left border-collapse">
+                <tbody id="specs-table-rows">
+                  <!-- Dynamically populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Guide Resistance to water guide bar -->
+          <div class="mt-8">
+            <h3 class="font-bold text-[#4B533F] text-[10px] sm:text-xs uppercase tracking-[0.25em] mb-3 flex items-center justify-center sm:justify-start gap-2 select-none">
+              <i data-lucide="shield-check" class="w-4 h-4 text-[#A39171]"></i>
+              GUIA DE RESISTÊNCIA À ÁGUA
+            </h3>
+            <p class="text-xs sm:text-sm text-[#2D2D2D]/80 pl-4 sm:pl-5 border-l-2 border-[#A39171] font-light text-center sm:text-left">
+              <strong class="font-semibold text-[#1A1A1A]">3 ATM:</strong> Adequado para respingo diário, respingos leves de torneira, chuva leve e lavagem de mãos. Não adequado para mergulho ou banho de piscina.
+            </p>
+          </div>
+
+          <!-- Attention dynamic notice box (SR626SW Battery tip) -->
+          <div class="mt-6 p-4 sm:p-5 bg-[#E5E1D8]/35 border border-[#A39171]/20 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-3.5 text-center sm:text-left shadow-2xs">
+            <i data-lucide="info" class="w-5 h-5 text-[#A39171] shrink-0 mt-0.5 animate-pulse"></i>
+            <div class="text-xs sm:text-sm text-[#2D2D2D] leading-relaxed font-sans">
+              <strong class="font-bold uppercase tracking-wider text-[10px] text-[#4B533F] block mb-1 select-none">ATENÇÃO:</strong>
+              Para preservar a sustentabilidade e transporte seguro, este produto é entregue sem bateria ativa. Recomendamos utilizar bateria tipo <strong class="font-bold text-[#1A1A1A]">SR626SW</strong>, de fácil reposição em relojoarias locais.
+            </div>
+          </div>
+
+          <!-- Bottom decoration tag -->
+          <div class="flex justify-center w-full mt-8 select-none">
+            <p class="text-center font-bold text-[#4B533F] text-[10px] sm:text-xs uppercase tracking-wider border border-[#A39171]/30 rounded-full py-2.5 px-5 sm:py-3 sm:px-6 bg-[#F9F7F2] shadow-3xs cursor-default">
+              Dourado ou prata escolha o que combina com você. Ou os dois.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bottom guarantees banner -->
+    <section class="w-full bg-[#F3EFE6] py-16 px-4 select-none border-t border-b border-[#4B533F]/10">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="flex flex-col items-center text-center p-3">
+          <div class="w-12 h-12 bg-[#F9F7F2]/90 rounded-full flex items-center justify-center text-[#4B533F] mb-4 border border-[#4B533F]/10 shadow-3xs">
+            <i data-lucide="shield-check" class="w-6 h-6 stroke-[1.5]"></i>
+          </div>
+          <h4 class="font-serif font-bold text-sm text-[#1A1A1A] mb-1">Satisfação 100% Garantida</h4>
+          <p class="text-xs text-[#2D2D2D]/70 max-w-xs leading-relaxed font-light">Oferecemos reembolso total até 7 dias após o recebimento se não amar o seu Édith.</p>
+        </div>
+        
+        <div class="flex flex-col items-center text-center p-3">
+          <div class="w-12 h-12 bg-[#F9F7F2]/90 rounded-full flex items-center justify-center text-[#4B533F] mb-4 border border-[#4B533F]/10 shadow-3xs">
+            <i data-lucide="refresh-cw" class="w-6 h-6 stroke-[1.5]"></i>
+          </div>
+          <h4 class="font-serif font-bold text-sm text-[#1A1A1A] mb-1">Troca Simples & Descomplicada</h4>
+          <p class="text-xs text-[#2D2D2D]/70 max-w-xs leading-relaxed font-light">Gostaria de trocar a peça de Dourado por Prata? Nós resolvemos isso para você sem taxas adicionais.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center p-3">
+          <div class="w-12 h-12 bg-[#F9F7F2]/90 rounded-full flex items-center justify-center text-[#4B533F] mb-4 border border-[#4B533F]/10 shadow-3xs">
+            <i data-lucide="heart" class="w-6 h-6 stroke-[1.5] text-[#A39171] fill-[#A39171]/10"></i>
+          </div>
+          <h4 class="font-serif font-bold text-sm text-[#1A1A1A] mb-1">Boutique Exclusiva Édith</h4>
+          <p class="text-xs text-[#2D2D2D]/70 max-w-xs leading-relaxed font-light">Campanha especial com estoque limitado. Aproveite as últimas unidades com frete cortesia ativo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Legal Footer -->
+  <footer class="w-full bg-neutral-950 text-white py-12 px-4 select-none font-sans text-center border-t border-[#4B533F]/15">
+    <div class="max-w-4xl mx-auto flex flex-col items-center gap-6">
+      <!-- Logo centered -->
       <div class="flex flex-col items-center">
-        <span class="text-2xl font-serif italic text-[#F9F7F2]">all inports</span>
-        <span class="text-[8px] tracking-[0.4em] text-[#A39171] uppercase font-bold mt-1.5 leading-none">Curated Luxury Lifestyle</span>
+        <span class="font-serif italic font-bold text-xl leading-tight tracking-wider text-white lowercase">
+          all
+          <span class="block not-italic font-sans font-black text-xs tracking-[0.25em] -mt-1 text-neutral-300 uppercase">
+            inports
+          </span>
+        </span>
       </div>
 
-      <!-- Legal pages navigation row links -->
-      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5 text-xs">
-        <a href="#" class="hover:text-[#F9F7F2] transition-colors">Termos de Serviço</a>
-        <span class="text-neutral-700 font-light select-none">|</span>
-        <a href="#" class="hover:text-[#F9F7F2] transition-colors">Política de Privacidade</a>
-        <span class="text-neutral-700 font-light select-none">|</span>
-        <a href="#" class="hover:text-[#F9F7F2] transition-colors">Trocas e Devoluções</a>
-        <span class="text-neutral-700 font-light select-none">|</span>
-        <a href="#" class="hover:text-[#F9F7F2] transition-colors">Rastreamento de Pedido</a>
+      <!-- Legal & CNPJ matching exactly -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5 text-[11px] sm:text-xs text-neutral-400 font-medium leading-relaxed tracking-wide uppercase">
+        <span>© 2026 All Inports</span>
+        <span class="text-neutral-800">|</span>
+        <span>CNPJ: 67.064.511/0001-48</span>
       </div>
 
-      <!-- Security certifications labels -->
-      <div class="flex items-center justify-center gap-5 mt-2 opacity-50 filter grayscale transition-opacity hover:opacity-75">
-        <span class="text-[10px] uppercase font-bold tracking-widest border border-neutral-600 px-2 rounded">SSL SECURE</span>
-        <span class="text-[10px] uppercase font-bold tracking-widest border border-neutral-600 px-2 rounded">RASTREAMENTO</span>
-        <span class="text-[10px] uppercase font-bold tracking-widest border border-neutral-600 px-2 rounded">DESPACHO RÁPIDO</span>
-      </div>
-
-      <!-- Copy footer rights text -->
-      <p class="text-[10px] font-mono tracking-widest leading-relaxed text-neutral-600 mt-4">
-        &copy; 2026 ALL INPORTS. TODOS OS DIREITOS RESERVADOS. CAIXA POSTAL BR-SP.
+      <!-- Extra clean disclaimer -->
+      <p class="text-[9px] text-neutral-500 max-w-sm leading-normal mt-2 border-t border-neutral-900 pt-4 uppercase tracking-wider">
+        Todos os direitos reservados. Landing page oficial para fins de demonstração de e-commerce e portfólio.
       </p>
     </div>
   </footer>
 
-  <!-- Floating Sticky bottom Buy action CTA for mobile navigation -->
-  <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 p-3.5 bg-[#F9F7F2]/95 backdrop-blur-md border-t border-[#4B533F]/15 z-50 flex items-center justify-between shadow-2xl transition-all duration-300 translate-y-24 opacity-0">
+  <!-- Floating Sticky Bottom Purchase CTA for Mobile (scroll triggered) -->
+  <div id="sticky-mobile-cta" class="md:hidden fixed bottom-0 left-0 right-0 bg-[#F9F7F2]/95 backdrop-blur-md border-t border-[#4B533F]/15 px-5 py-3.5 z-40 flex items-center justify-between shadow-[0_-4px_16px_rgba(75,83,63,0.12)] transition-all duration-300 translate-y-24 opacity-0 pointer-events-none">
     <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-lg overflow-hidden border border-[#4B533F]/15 bg-[#E5E1D8]/20 shrink-0">
-        <img id="sticky-img-preview" src="./src/assets/images/watch_gold_main_1780538308870.png" alt="Édith" class="w-full h-full object-cover" />
+      <div class="w-10 h-10 rounded-lg bg-white overflow-hidden shrink-0 border border-[#4B533F]/10">
+        <img id="sticky-preview-thumbnail" src="./src/assets/images/watch_gold_main_1780538308870.png" alt="Miniatura" class="w-full h-full object-cover" />
       </div>
-      <div>
-        <p class="text-[10px] font-serif font-bold text-[#1A1A1A] leading-none uppercase">ÉDITH DOURADO</p>
-        <p class="text-xs font-serif font-bold text-[#4B533F] mt-1">R$ 89,90 <span class="text-[10px] line-through text-neutral-400 font-sans font-normal ml-1">R$ 119,90</span></p>
+      <div class="flex flex-col">
+        <span id="sticky-preview-title" class="text-[10px] uppercase font-bold text-[#4B533F] tracking-wider leading-none">Édith Dourado</span>
+        <div class="flex items-baseline gap-1.5 mt-0.5">
+          <span class="text-sm font-bold text-[#1A1A1A] font-serif leading-none">R$ 89,90</span>
+          <span class="text-[9px] text-[#2D2D2D]/55 line-through leading-none">R$ 119,90</span>
+        </div>
       </div>
     </div>
-    <a id="sticky-checkout-btn" href="https://seguro.allinports.shop/r/6BGD73TXT1" target="_blank" rel="noopener noreferrer" class="bg-[#4B533F] hover:bg-[#5A5A40] text-[#F9F7F2] text-[10px] font-bold uppercase py-2.5 px-6 rounded-full tracking-wider shadow-sm transition-all duration-150 text-center font-sans">
+    
+    <a id="sticky-btn-buy" href="https://seguro.allinports.shop/r/6BGD73TXT1" target="_blank" rel="noopener noreferrer" class="bg-[#4B533F] hover:bg-[#5A5A40] text-white text-[11px] font-bold uppercase py-2.5 px-6 rounded-full tracking-wider shadow-sm text-center font-sans">
       COMPRAR AGORA
     </a>
   </div>
 
-  <!-- Vanilla JS Engine with full Interactive State logic matching App.tsx -->
+  <!-- Lucide Icon Font Engine Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Standalone Vanilla JS Core Engine -->
   <script>
-    // System variables and static listings mappings
-    const IMAGES = {
+    // Asset images database
+    const GALLERY_RESOURCES = {
       gold: [
         './src/assets/images/watch_gold_main_1780538308870.png',
         './src/assets/images/watch_gold_side_1780538332441.png',
@@ -484,18 +575,18 @@
       ],
       silver: [
         './src/assets/images/watch_silver_main_1780538320365.png',
-        './src/assets/images/watch_gold_side_1780538332441.png', // side, wrist, box shared
+        './src/assets/images/watch_gold_side_1780538332441.png', // images shared
         './src/assets/images/watch_gold_wrist_1780538344294.png',
         './src/assets/images/watch_gold_box_1780538357921.png'
       ]
     };
 
-    const CHECKOUT_LINKS = {
+    const SECURE_CHECKOUT_LINKS = {
       Dourado: 'https://seguro.allinports.shop/r/6BGD73TXT1',
       Prata: 'https://seguro.allinports.shop/r/88M72149M2'
     };
 
-    const TECHNICAL_SPECS = [
+    const TECHNICAL_SPECS_DATA = [
       { label: 'Movimento', value: 'Quartzo' },
       { label: 'Caixa', value: 'Aço inoxidável formato oval, apenas 7 mm de espessura' },
       { label: 'Diâmetro do mostrador', value: '24 mm discreta e elegante' },
@@ -506,15 +597,15 @@
       { label: 'Certificação', value: 'CE' }
     ];
 
-    let currentReviews = [
+    let systemReviews = [
       {
         id: 'rev-1',
         name: 'Ana Laura',
         rating: 5,
         date: 'Há 1 semana',
-        comment: 'O relógio possui uma pulseira de metal ajustável em tom amarelo que se ajusta confortavelmente ao pulso, tornando-o ideal tanto para uso diário quanto para ocasiões especiais. Seu tom amarelo/dourado não é excessivamente marcante, mas sim sofisticado e moderno. Estou usando há uma semana e não ficou feio ou desbotado, então é de boa qualidade. A capa tem formato oval, conferindo-lhe um visual clássico...',
+        comment: 'O relógio possui uma pulseira de metal ajustável em tom amarelo que se ajusta confortavelmente ao pulso, tornando-o ideal tanto para uso diário quanto para ocasiões especiais. Seu tom amarelo/dourado não é excessivamente marcante, mas sim sofisticado e moderno. Estou usando há uma semana e não ficou feio ou desbotado, então é de boa qualidade. A capa tem formato oval...',
         avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
-        productImg: './src/assets/images/watch_gold_main_1780538308870.png'
+        productImgUrl: './src/assets/images/watch_gold_main_1780538308870.png'
       },
       {
         id: 'rev-2',
@@ -523,7 +614,7 @@
         date: 'Há 2 semanas',
         comment: 'É lindo e tem uma aparência divina, adorei, só não vem com bateria, ops, e me serve perfeitamente porque você pode remover pequenos blocos para ajustá-lo perfeitamente.',
         avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150',
-        productImg: './src/assets/images/watch_gold_wrist_1780538344294.png'
+        productImgUrl: './src/assets/images/watch_gold_wrist_1780538344294.png'
       },
       {
         id: 'rev-3',
@@ -532,7 +623,7 @@
         date: 'Há 2 semanas',
         comment: 'Este relógio dourado é simplesmente elegante. Possui um brilho sutil e um formato que estiliza muito o pulso. Parece caro, embora seja muito acessível. O fecho funciona perfeitamente e a alça é confortável, não aperta nem pesa. Recebi bem protegido e já estava funcionando. O melhor é que combina com tudo, tanto roupas casuais quanto formais.',
         avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
-        productImg: './src/assets/images/watch_gold_side_1780538332441.png'
+        productImgUrl: './src/assets/images/watch_gold_side_1780538332441.png'
       },
       {
         id: 'rev-4',
@@ -541,7 +632,7 @@
         date: 'Há 3 semanas',
         comment: 'É perfeito, fácil de ajustar, tem ótima qualidade e uma cor muito bonita. Tenho um pulso bem fino e ele não parece grande demais de forma alguma.',
         avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150',
-        productImg: './src/assets/images/watch_gold_box_1780538357921.png'
+        productImgUrl: './src/assets/images/watch_gold_box_1780538357921.png'
       },
       {
         id: 'rev-5',
@@ -550,7 +641,7 @@
         date: 'Há 1 mês',
         comment: 'O relógio é lindo! super delicado e elegante. pra quem estiver com dificuldade de ajustar assim como eu tive, é só levantar a parte que tem uma setinha (primeira imagem), com o auxílio da ferramenta que vem junto, depois é só puxar/ajustar pro tamanho que deseja.',
         avatarUrl: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=150',
-        productImg: './src/assets/images/watch_gold_main_1780538308870.png'
+        productImgUrl: './src/assets/images/watch_gold_main_1780538308870.png'
       },
       {
         id: 'rev-6',
@@ -559,7 +650,7 @@
         date: 'Há 1 mês',
         comment: 'Gostei o material parece ser bom, gostei que ele regular o tamanho que precisa vem até uma ferramenta para facilitar e é bem fácil de regular, gostei mesmo.',
         avatarUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150',
-        productImg: './src/assets/images/watch_gold_wrist_1780538344294.png'
+        productImgUrl: './src/assets/images/watch_gold_wrist_1780538344294.png'
       },
       {
         id: 'rev-7',
@@ -568,342 +659,327 @@
         date: 'Há 1 mês',
         comment: 'É muito fofo, fica super estiloso com qualquer roupa e eleva significativamente o visual. O preço é incrível e chegou super rápido. Só tem que ter cuidado para que não fique feio rápido, mas é uma gracinha. ✨',
         avatarUrl: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=150',
-        productImg: './src/assets/images/watch_gold_side_1780538332441.png'
+        productImgUrl: './src/assets/images/watch_gold_side_1780538332441.png'
       }
     ];
 
-    // Reactive UI States
-    let activeColor = 'Dourado';
-    let activeGalleryUrls = [...IMAGES.gold];
-    let activeImgIndex = 0;
-    let reviewsExpanded = false;
-    let feedbackFormOpen = false;
+    // Reactive State
+    let selectedColor = 'Dourado';
+    let galleryImages = [...GALLERY_RESOURCES.gold];
+    let activeImageIndex = 0;
+    let reviewsVisibleCount = 3;
 
-    // Initialize View details
+    // Initialization hook loading
     window.addEventListener('DOMContentLoaded', () => {
-      renderSpecsTable();
-      updateColorRepresentationState();
+      // Inits lucide vector set
+      lucide.createIcons();
+
+      // Render default spec table rows
+      renderSpecs();
+
+      // Render default gallery thumbs
       renderThumbnails();
-      renderReviewsFeed();
-      initializeCountdownTimer();
+
+      // Render default customer feed listings
+      renderReviews();
+
+      // Fire tick loop timer
+      startCountdownTimer();
     });
 
-    // Color Swapping trigger function
-    function selectProductColor(colorName) {
-      if (activeColor === colorName) return;
-      activeColor = colorName;
-      
-      // Update gallery set mapping
-      activeGalleryUrls = activeColor === 'Dourado' ? [...IMAGES.gold] : [...IMAGES.silver];
-      activeImgIndex = 0; // reset to main image index
-
-      updateColorRepresentationState();
-      renderThumbnails();
-      updateMainGalleryDisplayImage();
-    }
-
-    function updateColorRepresentationState() {
-      // Buttons styling classes toggle representation
-      const btnGold = document.getElementById('color-btn-dourado');
-      const btnPrata = document.getElementById('color-btn-prata');
-      const checkPrata = document.getElementById('prata-checkmark');
-      const labelColor = document.getElementById('color-label-indicator');
-
-      if (activeColor === 'Dourado') {
-        btnGold.className = "flex-1 bg-white border-2 border-[#4B533F] rounded-xl py-3 px-4 flex items-center gap-3 shadow-2xs hover:bg-[#F9F7F2]/50 cursor-pointer transition-all duration-200 focus:outline-none";
-        btnPrata.className = "flex-1 bg-white hover:bg-[#F9F7F2] border border-[#4B533F]/20 rounded-xl py-3 px-4 flex items-center gap-3 shadow-3xs cursor-pointer transition-all duration-200 focus:outline-none";
-        checkPrata.classList.add('hidden');
-        labelColor.innerText = 'Dourado';
+    // Handle hamburger state
+    function toggleMenu(isOpen) {
+      const drawer = document.getElementById('side-drawer');
+      const inner = drawer.querySelector('.w-full');
+      if (isOpen) {
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        drawer.classList.add('opacity-100');
+        inner.classList.remove('-translate-x-full');
+        inner.classList.add('translate-x-0');
       } else {
-        btnGold.className = "flex-1 bg-white hover:bg-[#F9F7F2] border border-[#4B533F]/20 rounded-xl py-3 px-4 flex items-center gap-3 shadow-3xs cursor-pointer transition-all duration-200 focus:outline-none";
-        btnPrata.className = "flex-1 bg-white border-2 border-[#4B533F] rounded-xl py-3 px-4 flex items-center gap-3 shadow-2xs hover:bg-[#F9F7F2]/50 cursor-pointer transition-all duration-200 focus:outline-none";
-        checkPrata.classList.remove('hidden');
-        labelColor.innerText = 'Prata';
-      }
-
-      // Update checkout anchors links references
-      const checkoutAnchor = document.getElementById('checkout-direct-anchor');
-      const stickyCheckoutBtn = document.getElementById('sticky-checkout-btn');
-      
-      checkoutAnchor.href = CHECKOUT_LINKS[activeColor];
-      stickyCheckoutBtn.href = CHECKOUT_LINKS[activeColor];
-
-      // Update previews in sticky footer elements
-      const stickyTitle = document.querySelector('#sticky-bar p');
-      if (stickyTitle) {
-        stickyTitle.innerText = `ÉDITH ${activeColor.toUpperCase()}`;
-      }
-      const stickyImg = document.getElementById('sticky-img-preview');
-      if (stickyImg) {
-        stickyImg.src = activeGalleryUrls[0];
+        drawer.classList.add('pointer-events-none', 'opacity-0');
+        drawer.classList.remove('opacity-100');
+        inner.classList.add('-translate-x-full');
+        inner.classList.remove('translate-x-0');
       }
     }
 
-    // Image gallery functions
-    function updateMainGalleryDisplayImage() {
-      const mainImg = document.getElementById('main-gallery-img');
-      const currentNum = document.getElementById('gallery-current-num');
-      
-      // Add a clean visual transition effect
-      mainImg.classList.add('opacity-0');
-      setTimeout(() => {
-        mainImg.src = activeGalleryUrls[activeImgIndex];
-        currentNum.innerText = activeImgIndex + 1;
-        mainImg.classList.remove('opacity-0');
-      }, 120);
-
-      // Refresh highlighted states of thumb circles
-      renderThumbnails();
-    }
-
-    function prevGalleryImage() {
-      activeImgIndex = activeImgIndex === 0 ? activeGalleryUrls.length - 1 : activeImgIndex - 1;
-      updateMainGalleryDisplayImage();
-    }
-
-    function nextGalleryImage() {
-      activeImgIndex = activeImgIndex === activeGalleryUrls.length - 1 ? 0 : activeImgIndex + 1;
-      updateMainGalleryDisplayImage();
-    }
-
-    function selectThumbnail(index) {
-      activeImgIndex = index;
-      updateMainGalleryDisplayImage();
-    }
-
-    function renderThumbnails() {
-      const parent = document.getElementById('thumbnails-row');
+    // Spec rows builders
+    function renderSpecs() {
+      const parent = document.getElementById('specs-table-rows');
       parent.innerHTML = '';
-      
-      activeGalleryUrls.forEach((imgUrl, i) => {
-        const isSelected = i === activeImgIndex;
-        const button = document.createElement('button');
-        button.onclick = () => selectThumbnail(i);
-        button.className = `aspect-square rounded-lg sm:rounded-xl overflow-hidden border-2 bg-[#E5E1D8]/10 transition-all duration-150 cursor-pointer focus:outline-none ${
-          isSelected ? 'border-[#4B533F] scale-[1.03] shadow-xs' : 'border-transparent shadow-3xs opacity-80 hover:opacity-100'
-        }`;
-        
-        button.innerHTML = `<img src="${imgUrl}" alt="Miniatura ${i + 1}" class="w-full h-full object-cover" />`;
-        parent.appendChild(button);
-      });
-    }
-
-    // Mobile purchase action sticky helper
-    window.addEventListener('scroll', () => {
-      const stickyBar = document.getElementById('sticky-bar');
-      const heroBuyButton = document.getElementById('checkout-direct-anchor');
-      
-      if (!heroBuyButton) return;
-      
-      const rect = heroBuyButton.getBoundingClientRect();
-      const pastBuyBtn = rect.bottom < 0;
-
-      if (pastBuyBtn) {
-        stickyBar.classList.remove('translate-y-24', 'opacity-0');
-        stickyBar.classList.add('translate-y-0', 'opacity-100');
-      } else {
-        stickyBar.classList.add('translate-y-24', 'opacity-0');
-        stickyBar.classList.remove('translate-y-0', 'opacity-100');
-      }
-    });
-
-    // Technical specifications renderer
-    function renderSpecsTable() {
-      const body = document.getElementById('specs-table-body');
-      body.innerHTML = '';
-      
-      TECHNICAL_SPECS.forEach((spec) => {
-        const tr = document.createElement('tr');
-        tr.className = "border-b border-[#4B533F]/5 last:border-0 hover:bg-[#E5E1D8]/20 transition-colors duration-100";
-        tr.innerHTML = `
-          <td class="w-5/12 py-3 px-4 sm:py-3.5 sm:px-5 font-bold text-[#4B533F] uppercase tracking-wider text-[9px] sm:text-[10px] bg-[#E5E1D8]/10 whitespace-nowrap">
+      TECHNICAL_SPECS_DATA.forEach(spec => {
+        const row = document.createElement('tr');
+        row.className = "border-b border-[#4B533F]/5 last:border-0 hover:bg-[#E5E1D8]/20 transition-colors duration-100";
+        row.innerHTML = `
+          <td class="w-5/12 py-3 px-4 sm:py-3.5 sm:px-5 font-bold text-[#4B533F] uppercase tracking-wider text-[9px] sm:text-[10px] bg-[#E5E1D8]/10 whitespace-nowrap select-none">
             ${spec.label}
           </td>
           <td class="py-3 px-4 sm:py-3.5 sm:px-5 text-[#2D2D2D] font-medium text-xs sm:text-sm">
             ${spec.value}
           </td>
         `;
-        body.appendChild(tr);
+        parent.appendChild(row);
       });
     }
 
-    // Feedback Depoimentos toggle lists functions
-    function renderReviewsFeed() {
-      const container = document.getElementById('reviews-feed-container');
-      container.innerHTML = '';
+    // Reactive Color Selector logic
+    function selectColor(color) {
+      if (selectedColor === color) return;
+      selectedColor = color;
+      
+      // Toggle button active classes
+      const btnGold = document.getElementById('color-btn-gold');
+      const btnSilver = document.getElementById('color-btn-silver');
+      if (color === 'Dourado') {
+        btnGold.className = "px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer bg-[#4B533F] text-white shadow-sm ring-4 ring-[#4B533F]/15";
+        btnSilver.className = "px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer border border-[#4B533F]/20 hover:border-[#4B533F] bg-white text-[#4B533F]";
+      } else {
+        btnGold.className = "px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer border border-[#4B533F]/20 hover:border-[#4B533F] bg-white text-[#4B533F]";
+        btnSilver.className = "px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer bg-[#4B533F] text-white shadow-sm ring-4 ring-[#4B533F]/15";
+      }
 
-      // Limit based on expansion
-      const visibleCount = reviewsExpanded ? currentReviews.length : 3;
-      const sliced = currentReviews.slice(0, visibleCount);
+      // Update descriptive headers prefix
+      document.getElementById('title-color-suffix').innerText = `${color} Édith`;
 
-      sliced.forEach((rev) => {
-        const div = document.createElement('div');
-        div.className = "bg-white p-5 sm:p-6 rounded-2xl border border-[#4B533F]/10 flex flex-col md:grid md:grid-cols-12 gap-5 shadow-[0_2px_12px_rgba(75,83,63,0.03)]";
-        
-        let starsHtml = '';
-        for (let s = 1; s <= 5; s++) {
-          starsHtml += `<svg class="w-4 h-4 ${s <= rev.rating ? 'fill-current text-[#A39171]' : 'text-neutral-200'}" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>`;
+      // Reset gallery files
+      galleryImages = color === 'Dourado' ? [...GALLERY_RESOURCES.gold] : [...GALLERY_RESOURCES.silver];
+      activeImageIndex = 0;
+
+      // Swap direct secure checkout link targets
+      document.getElementById('btn-buy-checkout').href = SECURE_CHECKOUT_LINKS[color];
+      document.getElementById('sticky-btn-buy').href = SECURE_CHECKOUT_LINKS[color];
+
+      // Refresh image indicators
+      refreshActiveDisplay();
+      renderThumbnails();
+
+      // Mobile previews update
+      document.getElementById('sticky-preview-title').innerText = `Édith ${color}`;
+      document.getElementById('sticky-preview-thumbnail').src = galleryImages[0];
+    }
+
+    // Image slides control
+    function refreshActiveDisplay() {
+      const displayElem = document.getElementById('main-active-img');
+      const counterTag = document.getElementById('gallery-counter-tag');
+      
+      displayElem.classList.add('opacity-0');
+      setTimeout(() => {
+        displayElem.src = galleryImages[activeImageIndex];
+        counterTag.innerText = `${activeImageIndex + 1} / ${galleryImages.length}`;
+        displayElem.classList.remove('opacity-0');
+        renderThumbnails();
+      }, 120);
+    }
+
+    function scrollGalleryIndex(offset) {
+      activeImageIndex = (activeImageIndex + offset + galleryImages.length) % galleryImages.length;
+      refreshActiveDisplay();
+    }
+
+    function renderThumbnails() {
+      const list = document.getElementById('thumbnails-list');
+      list.innerHTML = '';
+      galleryImages.forEach((img, idx) => {
+        const isActive = idx === activeImageIndex;
+        const btn = document.createElement('button');
+        btn.onclick = () => { activeImageIndex = idx; refreshActiveDisplay(); };
+        btn.id = `thumb-btn-${idx}`;
+        btn.className = `w-11 h-11 xs:w-12 xs:h-12 md:w-full md:h-auto md:aspect-square relative rounded-xl overflow-hidden border-2 transition-all duration-200 shrink-0 cursor-pointer ${
+          isActive ? 'border-[#4B533F] bg-white ring-3 ring-[#4B533F]/10' : 'border-transparent bg-white hover:border-[#4B533F]/20'
+        }`;
+        btn.innerHTML = `<img src="${img}" alt="Thumb" class="w-full h-full object-cover" />`;
+        list.appendChild(btn);
+      });
+    }
+
+    // Dynamic ticking promo countdown 
+    function startCountdownTimer() {
+      // 2026-06-12 23:59:59 target 
+      const targetTime = new Date('2026-06-12T23:59:59').getTime();
+      
+      function tick() {
+        const now = new Date().getTime();
+        const difference = targetTime - now;
+
+        let d = 0, h = 0, m = 0, s = 0;
+        if (difference > 0) {
+          d = Math.floor(difference / (1000 * 60 * 60 * 24));
+          h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          s = Math.floor((difference % (1000 * 60)) / 1000);
         }
 
-        div.innerHTML = `
-          <!-- Meta credentials Column grid content -->
-          <div class="col-span-10 flex flex-col gap-3">
-            <div class="flex items-center gap-3">
-              <img src="${rev.avatarUrl}" alt="${rev.name}" class="w-10 h-10 rounded-full object-cover border border-[#4B533F]/10" />
-              <div class="font-sans">
-                <div class="flex items-center gap-2">
-                  <h4 class="text-xs sm:text-sm font-semibold text-[#1A1A1A]">${rev.name}</h4>
-                  <div class="flex items-center gap-1 bg-[#4B533F]/5 px-2 py-0.5 rounded-full text-[8px] sm:text-[9px] font-bold text-[#4B533F] uppercase tracking-wider">
-                    <svg class="w-2.5 h-2.5 fill-white stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"></path></svg>
-                    Compra verificada
-                  </div>
-                </div>
-                <div class="flex items-center gap-2 mt-1">
-                  <div class="flex">${starsHtml}</div>
-                  <span class="text-[9px] sm:text-[10px] text-neutral-400 font-medium">${rev.date}</span>
-                </div>
-              </div>
+        document.getElementById('timer-day').innerText = `${String(d).padStart(2, '0')}d`;
+        document.getElementById('timer-hour').innerText = `${String(h).padStart(2, '0')}h`;
+        document.getElementById('timer-min').innerText = `${String(m).padStart(2, '0')}m`;
+        document.getElementById('timer-sec').innerText = `${String(s).padStart(2, '0')}s`;
+      }
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    // Reviews management
+    function renderReviews() {
+      const parent = document.getElementById('reviews-feed-list');
+      parent.innerHTML = '';
+      
+      const toShow = systemReviews.slice(0, reviewsVisibleCount);
+      toShow.forEach(rev => {
+        const item = document.createElement('div');
+        item.className = "flex gap-4 sm:gap-6 border-b border-[#4B533F]/10 pb-6 sm:pb-8 last:border-0 last:pb-0 font-sans";
+        
+        // Render rating stars inside elements
+        let starsHtml = '';
+        for (let i = 0; i < rev.rating; i++) {
+          starsHtml += `<i data-lucide="star" class="w-3.5 h-3.5 fill-current text-[#A39171]"></i>`;
+        }
+
+        item.innerHTML = `
+          <!-- Review attached image block left side (Desktop only) -->
+          <div class="hidden sm:flex w-24 shrink-0 flex-col gap-2">
+            <div class="w-full aspect-square bg-[#E5E1D8]/20 rounded-xl overflow-hidden border border-[#4B533F]/10 select-none">
+              <img src="${rev.productImgUrl}" alt="Anexo Cliente" class="w-full h-full object-cover transition-all duration-300 pointer-events-none" />
             </div>
-            <p class="text-xs sm:text-sm text-[#2D2D2D]/90 font-light leading-relaxed font-sans">
-              "${rev.comment}"
-            </p>
+            <div class="text-[9px] text-center text-neutral-400 font-mono tracking-tight font-medium uppercase truncate select-none">
+              Anexo Cliente
+            </div>
           </div>
 
-          <!-- Associated evaluation attachment watch thumbnail -->
-          <div class="col-span-2 hidden md:flex flex-col items-end justify-center">
-            <div class="w-16 h-16 rounded-xl overflow-hidden border border-[#4B533F]/10 hover:border-[#4B533F]/30 hover:scale-105 duration-200 select-none cursor-pointer">
-              <img src="${rev.productImg}" alt="Foto da compra" class="w-full h-full object-cover" />
+          <!-- Review right metadata -->
+          <div class="flex-1 flex flex-col gap-1.5 text-[#2D2D2D]">
+            <div class="flex items-center justify-between gap-1.5 mt-0.5">
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-full overflow-hidden bg-[#E5E1D8] shrink-0 border border-[#4B533F]/10 select-none">
+                  <img src="${rev.avatarUrl}" alt="Avatar" class="w-full h-full object-cover" />
+                </div>
+                <span class="font-bold text-[#1A1A1A] text-sm font-serif">${rev.name}</span>
+              </div>
+              <span class="text-[10px] text-neutral-400 font-medium">${rev.date}</span>
+            </div>
+
+            <!-- Stars and verified client badge -->
+            <div class="flex items-center gap-3">
+              <div class="flex">${starsHtml}</div>
+              <div class="flex items-center gap-1 select-none">
+                <i data-lucide="check-circle" class="w-3 h-3 text-[#4B533F] fill-white"></i>
+                <span class="text-[9px] text-[#4B533F] font-bold uppercase tracking-wider">Comprador Verificado</span>
+              </div>
+            </div>
+
+            <!-- Comment text -->
+            <p class="text-[#2D2D2D]/80 text-xs sm:text-sm leading-relaxed mt-1 font-light">
+              ${rev.comment}
+            </p>
+
+            <!-- Mini avatar under comments (Mobile only layout helper) -->
+            <div class="sm:hidden mt-3 w-16 aspect-square bg-[#E5E1D8]/20 rounded-xl overflow-hidden border border-[#4B533F]/10 select-none">
+              <img src="${rev.productImgUrl}" alt="Anexo Celular" class="w-full h-full object-cover" />
             </div>
           </div>
         `;
-
-        container.appendChild(div);
+        parent.appendChild(item);
       });
+
+      // Update lucide icons in the dynamically added DOM nodes
+      lucide.createIcons();
     }
 
-    function toggleReviewsVisibility() {
-      reviewsExpanded = !reviewsExpanded;
-      
-      const label = document.getElementById('label-toggle-reviews');
-      const icon = document.getElementById('icon-toggle-reviews');
-
-      if (reviewsExpanded) {
-        label.innerText = 'ver menos';
-        icon.className = "w-3.5 h-3.5 shrink-0 text-[#A39171] rotate-180 duration-200";
+    function expandReviews() {
+      if (reviewsVisibleCount < systemReviews.length) {
+        reviewsVisibleCount = Math.min(reviewsVisibleCount + 4, systemReviews.length);
+        document.getElementById('label-reviews-btn').innerText = reviewsVisibleCount === systemReviews.length ? 'ver menos' : 'ver mais depoimentos';
+        document.getElementById('icon-reviews-btn').setAttribute('data-lucide', reviewsVisibleCount === systemReviews.length ? 'chevron-up' : 'chevron-down');
       } else {
-        label.innerText = 'ver mais depoimentos';
-        icon.className = "w-3.5 h-3.5 shrink-0 text-[#A39171] rotate-0 duration-200";
-        // Smoothly scroll back to original anchor top-point
-        document.getElementById('product-reviews').scrollIntoView({ behavior: 'smooth' });
+        reviewsVisibleCount = 3;
+        document.getElementById('label-reviews-btn').innerText = 'ver mais depoimentos';
+        document.getElementById('icon-reviews-btn').setAttribute('data-lucide', 'chevron-down');
       }
-
-      renderReviewsFeed();
+      renderReviews();
     }
 
-    // Interactive Review Form features
-    function scrollAndOpenReviewForm() {
-      toggleFormVisibility(true);
-      // Let anchor panel render before viewing
-      setTimeout(() => {
-        const formEl = document.getElementById('write-review-form-panel');
-        formEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-    }
-
-    function toggleFormVisibility(makeVisible) {
-      feedbackFormOpen = makeVisible;
-      const formEl = document.getElementById('write-review-form-panel');
-      if (feedbackFormOpen) {
-        formEl.style.display = 'flex';
+    function toggleAddReviewForm(isOpen) {
+      const form = document.getElementById('review-form-overlay');
+      if (isOpen) {
+        form.classList.remove('hidden');
+        form.classList.add('flex');
+        setTimeout(() => {
+          form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
       } else {
-        formEl.style.display = 'none';
+        form.classList.add('hidden');
+        form.classList.remove('flex');
       }
     }
 
-    let formSelectedRating = 5;
-    function setFormStars(ratingValue) {
-      formSelectedRating = ratingValue;
-      document.getElementById('input-review-stars').value = ratingValue;
-
-      // Update highlighted vector stars states in UI form
-      for (let s = 1; s <= 5; s++) {
-        const starEl = document.getElementById(`form-star-${s}`);
-        if (s <= ratingValue) {
+    // Star feedback rating selectors 
+    let currentFeedbackRating = 5;
+    function setStarRating(num) {
+      currentFeedbackRating = num;
+      document.getElementById('form-star-count').value = num;
+      for (let i = 1; i <= 5; i++) {
+        const starEl = document.getElementById(`form-star-${i}`);
+        if (i <= num) {
+          starEl.classList.add('fill-[#A39171]');
           starEl.classList.remove('text-neutral-200');
-          starEl.classList.add('fill-current', 'text-[#A39171]');
         } else {
+          starEl.classList.remove('fill-[#A39171]');
           starEl.classList.add('text-neutral-200');
-          starEl.classList.remove('fill-current', 'text-[#A39171]');
         }
       }
     }
 
-    function handleReviewSubmit(e) {
-      e.preventDefault();
+    // Submit rating comment flow
+    function handleReviewFormSubmit(event) {
+      event.preventDefault();
+      const inputName = document.getElementById('form-input-name').value.trim();
+      const inputComment = document.getElementById('form-input-comment').value.trim();
       
-      const inputName = document.getElementById('input-review-name').value;
-      const inputComment = document.getElementById('input-review-comment').value;
+      if (!inputName || !inputComment) return;
 
-      // Push a new mock review onto our live client array
-      const addedRev = {
-        id: 'rev-' + Date.now(),
+      const newReviewNode = {
+        id: `custom-feedback-${Date.now()}`,
         name: inputName,
-        rating: formSelectedRating,
-        date: 'Hoje',
+        rating: currentFeedbackRating,
+        date: 'Agora mesmo',
         comment: inputComment,
-        avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150', // standard avatar placeholder
-        productImg: activeGalleryUrls[0] // pick active color image path
+        avatarUrl: `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(inputName)}`,
+        productImgUrl: './src/assets/images/watch_gold_main_1780538308870.png'
       };
 
-      currentReviews.unshift(addedRev);
+      systemReviews = [newReviewNode, ...systemReviews];
+      reviewsVisibleCount += 1; // display newly added comentario
       
-      // Auto expand to show user's comment
-      reviewsExpanded = true;
-      toggleFormVisibility(false);
-      renderReviewsFeed();
-
-      // Reset fields
-      document.getElementById('input-review-name').value = '';
-      document.getElementById('input-review-comment').value = '';
-      setFormStars(5);
-
-      // Sweet dynamic notify
-      alert('Muito obrigado! Seu depoimento foi enviado com sucesso e está pendente de moderação.');
+      // Clean up fields
+      document.getElementById('form-input-name').value = '';
+      document.getElementById('form-input-comment').value = '';
+      setStarRating(5);
+      
+      // Hide form
+      toggleAddReviewForm(false);
+      
+      // Refresh list feed
+      renderReviews();
     }
 
-    // Dynamic countdown timer loop engine
-    function initializeCountdownTimer() {
-      // Create a nice fake countdown that matches ending on Jun 12 or rolls 9 days forward dynamically
-      const targetDate = new Date();
-      targetDate.setDate(targetDate.getDate() + 9);
-      targetDate.setHours(23, 59, 59);
+    // Sticky CTA scroll tracker
+    window.addEventListener('scroll', () => {
+      const stickyBar = document.getElementById('sticky-mobile-cta');
+      const checkoutBtn = document.getElementById('btn-buy-checkout');
+      if (!checkoutBtn) return;
+      
+      const bounds = checkoutBtn.getBoundingClientRect();
+      const scrolledBeyondBtn = bounds.bottom < 0;
 
-      function updateClock() {
-        const now = new Date();
-        const diff = targetDate.getTime() - now.getTime();
-
-        if (diff <= 0) {
-          document.getElementById('countdown-days').innerText = "00";
-          document.getElementById('countdown-hours').innerText = "00";
-          document.getElementById('countdown-minutes').innerText = "00";
-          document.getElementById('countdown-seconds').innerText = "00";
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const mins = Math.floor((diff / 1000 / 60) % 60);
-        const secs = Math.floor((diff / 1000) % 60);
-
-        document.getElementById('countdown-days').innerText = String(days).padStart(2, '0');
-        document.getElementById('countdown-hours').innerText = String(hours).padStart(2, '0');
-        document.getElementById('countdown-minutes').innerText = String(mins).padStart(2, '0');
-        document.getElementById('countdown-seconds').innerText = String(secs).padStart(2, '0');
+      if (scrolledBeyondBtn) {
+        stickyBar.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        stickyBar.classList.add('translate-y-0', 'opacity-100');
+      } else {
+        stickyBar.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        stickyBar.classList.remove('translate-y-0', 'opacity-100');
       }
-
-      updateClock();
-      setInterval(updateClock, 1000);
-    }
+    }, { passive: true });
   </script>
 </body>
 </html>
