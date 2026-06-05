@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relógio Édith | All Inports</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Design oval clássico e sofisticado inspirado na joalheria vintage. O luxo silencioso que expressa delicadeza e elegância em cada detalhe." />
+  <meta name="keywords" content="relogio edith, relogio feminino, all inports, relogio vintage, luxo silencioso" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Relógio Édith | All Inports" />
+  <meta property="og:description" content="Design oval clássico e sofisticado inspirado na joalheria vintage." />
+  <meta property="og:image" content="./src/assets/images/watch_gold_main_1780538308870.png" />
+  <meta property="og:site_name" content="All Inports" />
+  
+  <!-- Favicon Sparkles -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          screens: {
+            'xs': '400px',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F9F7F2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #4B533F;
+      border-radius: 3px;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F7F2] text-[#2D2D2D] font-sans selection:bg-[#4B533F] selection:text-[#F9F7F2] min-h-screen flex flex-col antialiased">
+
+  <!-- Promo Top Announcement Banner -->
+  <div class="w-full bg-[#4B533F] text-[#F9F7F2] py-2.5 px-4 text-center text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase leading-snug select-none">
+    RECEBA SEU PEDIDO COM ENTREGA CORTESIA PARA TODO BRASIL.
+  </div>
+
+  <!-- Navbar Header -->
+  <header class="w-full bg-[#F9F7F2] border-b border-[#4B533F]/10 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <button id="btn-menu-toggle" onclick="toggleMenu(true)" class="text-[#4B533F] p-2 hover:bg-[#4B533F]/5 rounded-full transition-all cursor-pointer" aria-label="Menu">
+        <i data-lucide="menu" class="w-6 h-6 stroke-[1.5]"></i>
+      </button>
+
+      <!-- Logo with elegant serif typography layout -->
+      <div class="flex flex-col items-center select-none cursor-pointer">
+        <span class="font-serif italic font-bold text-2xl leading-none tracking-wide text-[#4B533F] lowercase">
+          all
+          <span class="block not-italic font-sans font-extrabold text-[10px] tracking-[0.3em] mt-0.5 text-[#A39171] uppercase">
+            inports
+          </span>
+        </span>
+      </div>
+
+      <button class="text-[#4B533F] p-2 hover:bg-[#4B533F]/5 rounded-full transition-all cursor-pointer" aria-label="Perfil">
+        <i data-lucide="user" class="w-6 h-6 stroke-[1.5]"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Left slide-out drawer navigation menu -->
+  <div id="side-drawer" class="fixed inset-0 bg-black/40 z-50 transition-opacity duration-300 opacity-0 pointer-events-none backdrop-blur-xs flex" onclick="toggleMenu(false)">
+    <div class="w-full max-w-[280px] sm:max-w-xs bg-[#F9F7F2] h-full shadow-2xl p-6 sm:p-8 flex flex-col gap-6 sm:gap-8 border-r border-[#4B533F]/10 -translate-x-full transition-transform duration-300 relative" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between pb-4 border-b border-[#4B533F]/10">
+        <div class="flex flex-col items-start select-none">
+          <span class="font-serif italic font-bold text-xl leading-none tracking-wide text-[#4B533F] lowercase">
+            all
+            <span class="block not-italic font-sans font-extrabold text-[9px] tracking-[0.3em] mt-0.5 text-[#A39171] uppercase">
+              inports
+            </span>
+          </span>
+        </div>
+        <button onclick="toggleMenu(false)" class="text-[#4B533F] p-1.5 hover:bg-[#4B533F]/5 rounded-full transition-all cursor-pointer" aria-label="Fechar">
+          <i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-4 sm:gap-5 text-[#2D2D2D] font-sans font-semibold text-base sm:text-lg">
+        <a href="#" class="hover:text-[#4B533F] transition-colors py-1.5 border-b border-[#4B533F]/5" onclick="toggleMenu(false)">Início</a>
+        <a href="#product-specs-anchor" class="hover:text-[#4B533F] transition-colors py-1.5 border-b border-[#4B533F]/5" onclick="toggleMenu(false)">Especificações</a>
+        <a href="#product-reviews" class="hover:text-[#4B533F] transition-colors py-1.5 border-b border-[#4B533F]/5" onclick="toggleMenu(false)">Avaliações</a>
+        <a href="#product-desc" class="hover:text-[#4B533F] transition-colors py-1.5 border-b border-[#4B533F]/5" onclick="toggleMenu(false)">Descrição</a>
+      </nav>
+
+      <div class="mt-auto flex flex-col gap-3.5 border-t border-[#4B533F]/10 pt-5">
+        <div class="flex items-center gap-3 text-xs sm:text-sm text-[#4B533F]">
+          <i data-lucide="shield-check" class="w-5 h-5 text-[#A39171]"></i>
+          <span>Compra 100% Segura</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs sm:text-sm text-[#4B533F]">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-[#4B533F]"></i>
+          <span>Entrega de Cortesia Garantida</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs sm:text-sm text-[#4B533F]">
+          <i data-lucide="help-circle" class="w-5 h-5 text-[#4B533F]"></i>
+          <span>Suporte Total do Cliente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main View Grid Content Area -->
+  <main class="flex-1 w-full flex flex-col">
+    <!-- Top Fold: Gallery & Buy Selector details -->
+    <section class="w-full max-w-6xl mx-auto px-4 py-6 md:py-12 flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
+      
+      <!-- Column 1: Image Gallery -->
+      <div class="w-full md:col-span-7 flex flex-col gap-4 md:sticky md:top-28">
+        <div class="flex flex-col md:flex-row gap-3 sm:gap-4 w-full h-[360px] xs:h-[440px] md:h-[500px]">
+          <!-- Thumbnails Selector Panel -->
+          <div class="flex flex-row md:flex-col items-center justify-between py-1 px-2.5 md:py-2 md:px-1.5 w-full md:w-20 lg:w-24 h-16 md:h-full shrink-0 border border-[#4B533F]/10 rounded-2xl bg-[#E5E1D8]/20 p-1.5 shadow-2xs order-last md:order-first">
+            <button onclick="scrollGalleryIndex(-1)" class="hidden md:flex p-1.5 hover:bg-[#4B533F]/5 rounded-full transition-all text-[#4B533F]" aria-label="Anterior">
+              <i data-lucide="chevron-up" class="w-4 h-4"></i>
+            </button>
+
+            <!-- Thumbnails List container -->
+            <div id="thumbnails-list" class="flex flex-row md:flex-col gap-2 md:gap-2.5 overflow-x-auto md:overflow-x-hidden overflow-y-hidden md:overflow-y-auto no-scrollbar scroll-smooth w-full h-full items-center justify-center md:justify-start py-1 md:py-0">
+              <!-- Dynamically populated via JS -->
+            </div>
+
+            <button onclick="scrollGalleryIndex(1)" class="hidden md:flex p-1.5 hover:bg-[#4B533F]/5 rounded-full transition-all text-[#4B533F]" aria-label="Próximo">
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Hero Main Showcase Frame -->
+          <div class="flex-1 relative rounded-2xl border border-[#4B533F]/10 overflow-hidden bg-[#E5E1D8]/10 flex items-center justify-center group shadow-xs">
+            <img id="main-active-img" src="./src/assets/images/watch_gold_main_1780538308870.png" alt="Relógio Édith" class="w-full h-full object-cover transition-opacity duration-200" />
+            
+            <!-- Float Navigation overlay arrows -->
+            <button onclick="scrollGalleryIndex(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 hover:bg-white text-[#4B533F] flex items-center justify-center border border-[#4B533F]/15 shadow-sm backdrop-blur-xs transition-colors hover:scale-105 active:scale-95 cursor-pointer z-10" aria-label="Anterior">
+              <i data-lucide="chevron-left" class="w-5 h-5 stroke-[2]"></i>
+            </button>
+            <button onclick="scrollGalleryIndex(1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 hover:bg-white text-[#4B533F] flex items-center justify-center border border-[#4B533F]/15 shadow-sm backdrop-blur-xs transition-colors hover:scale-105 active:scale-95 cursor-pointer z-10" aria-label="Próximo">
+              <i data-lucide="chevron-right" class="w-5 h-5 stroke-[2]"></i>
+            </button>
+
+            <!-- Image indicators counter -->
+            <div id="gallery-counter-tag" class="absolute bottom-3 right-3 bg-[#4B533F]/80 text-white text-[10px] sm:text-xs px-2.5 py-1 rounded-full font-bold backdrop-blur-xs tracking-wider select-none font-mono">
+              1 / 4
+            </div>
+          </div>
+        </div>
+
+        <!-- Alert badge note -->
+        <div class="hidden md:flex items-center gap-2.5 bg-[#E5E1D8]/20 border border-[#4B533F]/10 p-3.5 rounded-2xl text-xs text-[#2D2D2D]/80 select-none">
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#A39171] shrink-0"></i>
+          <span>Dicas: Alterne as cores no menu ao lado para conferir as fotos em alta resolução de cada banho (Dourado Champagne ou Prata Pure).</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Buy details form console -->
+      <div id="buy-info-column" class="w-full md:col-span-5 flex flex-col gap-4 font-sans text-[#2D2D2D]">
+        
+        <div class="flex flex-col gap-1">
+          <span class="text-[#A39171] uppercase tracking-[0.3em] text-xs font-bold font-sans italic">
+            Boutique All Inports
+          </span>
+          <h1 class="text-3xl sm:text-4xl md:text-[40px] font-serif font-light leading-[1.1] text-[#1A1A1A] mt-1.5">
+            Relógio Feminino Oval <br/>
+            <span id="title-color-suffix" class="italic font-bold text-[#4B533F]">Dourado Édith</span>
+          </h1>
+        </div>
+
+        <p class="font-sans text-sm sm:text-base leading-relaxed text-[#2D2D2D]/80 font-light">
+          Caixa oval de luxo com perfil ultrafino de apenas 7mm, pulseira elegante em elos de aço inoxidável e mostrador minimalista projetado para restaurar a sofisticação no pulso da mulher moderna.
+        </p>
+
+        <!-- Color Selector -->
+        <div class="flex items-center gap-3.5 py-1.5 select-none border-t border-b border-[#4B533F]/10 my-1">
+          <span class="text-xs uppercase tracking-widest font-semibold opacity-70 text-[#2D2D2D]">Cor:</span>
+          <div class="flex gap-2.5">
+            <button id="color-btn-gold" onclick="selectColor('Dourado')" class="px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer bg-[#4B533F] text-white shadow-sm ring-4 ring-[#4B533F]/15">
+              Dourado
+            </button>
+            <button id="color-btn-silver" onclick="selectColor('Prata')" class="px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer border border-[#4B533F]/20 hover:border-[#4B533F] bg-white text-[#4B533F]">
+              Prata
+            </button>
+          </div>
+        </div>
+
+        <!-- Price display -->
+        <div class="bg-[#E5E1D8]/35 rounded-3xl p-5 border border-[#4B533F]/10 flex flex-col gap-1.5 shadow-2xs my-1 select-none">
+          <span class="text-[#2D2D2D]/60 text-xs sm:text-sm font-medium uppercase tracking-wider">
+            De <span class="line-through">R$ 119,90</span> por apenas
+          </span>
+          <div class="flex items-baseline gap-2.5">
+            <span class="text-4xl sm:text-5xl font-extrabold text-[#1A1A1A] font-serif tracking-tight">
+              R$ 89,90
+            </span>
+            <span class="text-[11px] font-bold text-[#4B533F] bg-[#4B533F]/10 border border-[#4B533F]/25 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              Economize 25%
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-[#4B533F] font-bold flex items-center gap-2 mt-0.5">
+            <i data-lucide="credit-card" class="w-4 h-4 text-[#A39171]"></i>
+            ou 12x de <strong class="text-[#1A1A1A] font-extrabold text-sm">R$ 7,97</strong> sem juros no cartão
+          </p>
+        </div>
+
+        <!-- Valentine's Countdown Timer -->
+        <div class="w-full bg-[#E5E1D8]/65 text-[#2D2D2D] rounded-2xl p-4 flex flex-col sm:flex-row items-add sm:items-center justify-between gap-3 select-none border border-[#4B533F]/10 shadow-xs">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-[#A39171]">Oferta Especial</span>
+            <h4 class="font-serif italic font-extrabold text-[22px] text-[#4B533F] leading-tight mt-0.5">
+              Dia dos Namorados
+            </h4>
+            <p class="text-xs font-semibold text-neutral-600">
+              Estoque limitado premium
+            </p>
+          </div>
+          <div class="flex flex-col sm:items-end text-left sm:text-right gap-1.5">
+            <span class="text-[10px] font-bold text-[#4B533F] uppercase tracking-wider flex items-center gap-1 sm:justify-end">
+              <i data-lucide="clock" class="w-3.5 h-3.5 shrink-0 animate-pulse"></i>
+              Termina em <strong class="text-[#4B533F] font-extrabold">12 de Junho, 23:59</strong>
+            </span>
+            <div class="flex gap-1.5 mt-0.5 font-mono text-xs font-bold text-[#4B533F]">
+              <span id="timer-day" class="bg-white/95 px-2 py-0.5 rounded-lg shadow-2xs border border-[#4B533F]/15">00d</span>
+              <span class="text-[#A39171]/80 self-center">:</span>
+              <span id="timer-hour" class="bg-white/95 px-2 py-0.5 rounded-lg shadow-2xs border border-[#4B533F]/15">00h</span>
+              <span class="text-[#A39171]/80 self-center">:</span>
+              <span id="timer-min" class="bg-white/95 px-2 py-0.5 rounded-lg shadow-2xs border border-[#4B533F]/15">00m</span>
+              <span class="text-[#A39171]/80 self-center">:</span>
+              <span id="timer-sec" class="bg-white/95 px-2 py-0.5 rounded-lg shadow-2xs border border-[#4B533F]/15 text-[#A39171] font-extrabold">00s</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buy Button -->
+        <a id="btn-buy-checkout" href="https://seguro.allinports.shop/r/6BGD73TXT1" target="_blank" rel="noopener noreferrer" class="w-full bg-[#4B533F] hover:bg-[#5A5A40] text-white text-xs sm:text-sm font-bold uppercase py-4 px-8 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] cursor-pointer tracking-[0.2em] text-center flex items-center justify-center gap-2.5 mt-2">
+          <i data-lucide="truck" class="w-5 h-5 shrink-0 animate-bounce"></i>
+          <span>COMPRAR COM FRETE GRÁTIS</span>
+        </a>
+
+        <!-- Trust seals -->
+        <div class="grid grid-cols-3 gap-2.5 py-3 mt-2 border-t border-b border-[#4B533F]/10">
+          <div class="flex flex-col items-center text-center p-1.5 font-sans">
+            <i data-lucide="shield-check" class="w-5 h-5 text-[#4B533F] mb-1.5"></i>
+            <span class="text-[9px] font-bold text-[#4B533F] uppercase tracking-widest">Compra Segura</span>
+            <span class="text-[9px] text-[#A39171] mt-0.5 italic">Criptografia SSL</span>
+          </div>
+          <div class="flex flex-col items-center text-center p-1.5 border-l border-r border-[#4B533F]/10 font-sans">
+            <i data-lucide="truck" class="w-5 h-5 text-[#4B533F] mb-1.5"></i>
+            <span class="text-[9px] font-bold text-[#4B533F] uppercase tracking-widest">Frete Cortesia</span>
+            <span class="text-[9px] text-[#A39171] mt-0.5 italic">Prazo 7-15 dias</span>
+          </div>
+          <div class="flex flex-col items-center text-center p-1.5 font-sans">
+            <i data-lucide="help-circle" class="w-5 h-5 text-[#4B533F] mb-1.5"></i>
+            <span class="text-[9px] font-bold text-[#4B533F] uppercase tracking-widest">Suporte Total</span>
+            <span class="text-[9px] text-[#A39171] mt-0.5 italic">Chat de Ouvidoria</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mid Section 1: Customer Interactive Reviews -->
+    <section id="product-reviews" class="w-full bg-[#F9F7F2] py-16 border-t border-b border-[#4B533F]/10">
+      <div class="max-w-4xl mx-auto px-6">
+        
+        <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#4B533F]/10 pb-6">
+          <div class="flex flex-col gap-2.5 text-center md:text-left font-sans">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-[#1A1A1A] tracking-tight">
+              O que dizem sobre o Édith
+            </h3>
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 justify-center md:justify-start">
+              <div class="flex text-[#A39171] gap-0.5 pb-0.5 select-none">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <span class="text-xs sm:text-sm font-medium text-[#2D2D2D]/75 block">
+                1.410 Depoimentos de Clientes em todo o Brasil
+              </span>
+            </div>
+          </div>
+          
+          <div class="flex items-center justify-center gap-2 bg-[#4B533F]/5 px-4 py-2 rounded-full border border-[#4B533F]/10 shrink-0 self-center md:self-end select-none">
+            <i data-lucide="check-circle" class="w-4 h-4 text-[#4B533F] fill-white"></i>
+            <span class="text-[10px] sm:text-xs font-bold text-[#4B533F] uppercase tracking-wider">
+              100% de Satisfação Garantida
+            </span>
+          </div>
+        </div>
+
+        <!-- Feed Reviews List container -->
+        <div id="reviews-feed-list" class="flex flex-col gap-6 sm:gap-8">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Reviews actions buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 w-full max-w-lg mx-auto">
+          <button id="btn-toggle-reviews" onclick="expandReviews()" class="w-full sm:w-auto px-7 py-3.5 border border-[#4B533F]/25 hover:border-[#4B533F] rounded-full text-[11px] font-bold uppercase tracking-[0.18em] text-[#4B533F] bg-white hover:bg-[#E5E1D8]/20 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-2xs outline-none">
+            <span id="label-reviews-btn">ver mais depoimentos</span>
+            <i id="icon-reviews-btn" data-lucide="chevron-down" class="w-3.5 h-3.5 text-[#A39171]"></i>
+          </button>
+
+          <button onclick="toggleAddReviewForm()" class="w-full sm:w-auto px-7 py-3.5 bg-[#4B533F] hover:bg-[#5A5A40] text-[#F9F7F2] rounded-full text-[11px] font-bold uppercase tracking-[0.18em] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs outline-none">
+            <i data-lucide="plus-circle" class="w-4 h-4 text-[#A39171]"></i>
+            <span>Escrever depoimento</span>
+          </button>
+        </div>
+
+        <!-- Add Customer Feedback Form Overlay panel -->
+        <div id="review-form-overlay" class="hidden mt-8 p-5 sm:p-6 bg-white border border-[#4B533F]/10 rounded-2xl flex flex-col gap-4 w-full max-w-lg mx-auto shadow-xs scroll-mt-24 transition-all duration-300">
+          <h4 class="font-serif font-bold text-[#1A1A1A] text-base sm:text-lg text-center sm:text-left">Deixe sua Opinião Sincera</h4>
+          
+          <form onsubmit="handleReviewFormSubmit(event)" class="flex flex-col gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div>
+                <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Seu Nome Completo</label>
+                <input id="form-input-name" type="text" required placeholder="Ex: Amanda Silva" class="w-full text-sm px-4 py-2.5 rounded-xl border border-[#4B533F]/20 bg-white focus:ring-1 focus:ring-[#4B533F] focus:border-[#4B533F] outline-none font-sans text-[#2D2D2D]" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Avaliação (Estrelas)</label>
+                <div class="flex gap-1.5 py-1.5" id="form-star-box-selection">
+                  <input type="hidden" id="form-star-count" value="5" />
+                  <button type="button" onclick="setStarRating(1)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-1"></i>
+                  </button>
+                  <button type="button" onclick="setStarRating(2)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-2"></i>
+                  </button>
+                  <button type="button" onclick="setStarRating(3)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-3"></i>
+                  </button>
+                  <button type="button" onclick="setStarRating(4)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-4"></i>
+                  </button>
+                  <button type="button" onclick="setStarRating(5)" class="text-[#A39171] hover:scale-110 duration-100 cursor-pointer outline-none select-none">
+                    <i data-lucide="star" class="w-6 h-6 fill-[#A39171]" id="form-star-5"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-[#2D2D2D]/80 mb-1">Seu Comentário ou Crítica</label>
+              <textarea id="form-input-comment" required rows="3" placeholder="Compartilhe como foi sua experiência com o acabamento, cor e embalagem do produto de luxo..." class="w-full text-sm px-4 py-3 rounded-xl border border-[#4B533F]/20 bg-white focus:ring-1 focus:ring-[#4B533F] focus:border-[#4B533F] outline-none font-sans resize-none text-[#2D2D2D]"></textarea>
+            </div>
+
+            <div class="flex items-center gap-3 justify-end mt-1">
+              <button type="button" onclick="toggleAddReviewForm()" class="text-neutral-500 hover:text-[#1A1A1A] font-semibold text-xs px-4 py-2 uppercase tracking-wider outline-none cursor-pointer">
+                Cancelar
+              </button>
+              <button type="submit" class="bg-[#4B533F] hover:bg-[#5A5A40] text-white font-bold text-xs px-6 py-2.5 rounded-full transition-colors uppercase tracking-wider outline-none cursor-pointer">
+                Enviar Comentário
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mid Section 2: Detailed Specifications Guide -->
+    <section id="product-desc" class="w-full bg-[#E5E1D8]/20 py-16 border-t border-b border-[#4B533F]/10">
+      <div id="product-specs-anchor" class="max-w-3xl mx-auto px-6 font-sans text-[#2D2D2D]">
+        
+        <div class="text-center mb-8 sm:mb-10 flex flex-col items-center gap-1 select-none">
+          <span class="text-sm sm:text-base font-serif font-light text-[#2D2D2D]/70 tracking-wide">
+            A Arte nos Detalhes
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-serif italic font-bold text-[#4B533F] tracking-tight mt-1">
+            Relógio Édith
+          </h2>
+        </div>
+
+        <div class="flex flex-col gap-6 text-sm sm:text-base leading-relaxed text-[#2D2D2D]/95">
+          <p class="font-serif italic text-base sm:text-lg text-[#4B533F] bg-[#E5E1D8]/45 border border-[#4B533F]/10 p-4 sm:p-5 rounded-2xl shadow-2xs select-none text-center">
+            &ldquo;Pequeno no pulso. Grande no impacto.&rdquo;
+          </p>
+
+          <p class="font-light text-center sm:text-left">
+            O modelo <strong class="font-semibold text-[#1A1A1A]">L737</strong> tem tudo o que um relógio de alta classe feminina precisa ter: caixa oval ultrafina, pulseira em elos flexíveis de aço e mostrador minimalista que eleva qualquer visual do casual ao sofisticado.
+          </p>
+
+          <p class="font-light text-center sm:text-left">
+            Para quem prefere a sutileza de acessórios que expressam luxo silencioso e impressionam em cada gesto.
+          </p>
+
+          <!-- Specifications bullet list / Grid Table -->
+          <div class="mt-8 border-t border-[#4B533F]/10 pt-8">
+            <h3 class="font-semibold text-[#1A1A1A] text-xs sm:text-sm mb-4 flex items-center justify-center sm:justify-start gap-2 uppercase tracking-wider">
+              <i data-lucide="file-text" class="w-4 h-4 text-[#A39171]"></i>
+              Especificações Técnicas:
+            </h3>
+
+            <div class="bg-[#F9F7F2] rounded-2xl border border-[#4B533F]/10 overflow-hidden shadow-2xs">
+              <table class="w-full text-xs sm:text-sm text-left border-collapse">
+                <tbody id="specs-table-rows">
+                  <!-- Dynamically populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Guide Resistance to water -->
+          <div class="mt-8">
+            <h3 class="font-bold text-[#4B533F] text-[10px] sm:text-xs uppercase tracking-[0.25em] mb-3 flex items-center justify-center sm:justify-start gap-2 select-none">
+              <i data-lucide="shield-check" class="w-4 h-4 text-[#A39171]"></i>
+              GUIA DE RESISTÊNCIA À ÁGUA
+            </h3>
+            <p class="text-xs sm:text-sm text-[#2D2D2D]/80 pl-4 sm:pl-5 border-l-2 border-[#A39171] font-light text-center sm:text-left">
+              <strong class="font-semibold text-[#1A1A1A]">3 ATM:</strong> Adequado para respingos diários, respingos leves de torneira, chuva leve e lavagem de mãos. Não adequado para mergulho ou banho de piscina.
+            </p>
+          </div>
+
+          <!-- Attention notice box -->
+          <div class="mt-6 p-4 sm:p-5 bg-[#E5E1D8]/35 border border-[#A39171]/20 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-3.5 text-center sm:text-left shadow-2xs">
+            <i data-lucide="info" class="w-5 h-5 text-[#A39171] shrink-0 mt-0.5 animate-pulse"></i>
+            <div class="text-xs sm:text-sm text-[#2D2D2D] leading-relaxed font-sans">
+              <strong class="font-bold uppercase tracking-wider text-[10px] text-[#4B533F] block mb-1 select-none">ATENÇÃO:</strong>
+              Para preservar a sustentabilidade e transporte seguro, este produto é entregue sem bateria ativa. Recomendamos utilizar bateria tipo <strong class="font-bold text-[#1A1A1A]">SR626SW</strong>, de fácil reposição em relojoarias locais.
+            </div>
+          </div>
+
+          <!-- Bottom decoration tag -->
+          <div class="flex justify-center w-full mt-8 select-none">
+            <p class="text-center font-bold text-[#4B533F] text-[10px] sm:text-xs uppercase tracking-wider border border-[#A39171]/30 rounded-full py-2.5 px-5 sm:py-3 sm:px-6 bg-[#F9F7F2] shadow-3xs cursor-default">
+              Dourado ou prata, escolha o que combina com você. Ou os dois.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bottom guarantees banner -->
+    <section class="w-full bg-[#F3EFE6] py-16 px-4 select-none border-t border-b border-[#4B533F]/10">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="flex flex-col items-center text-center p-3">
+          <div class="w-12 h-12 bg-[#F9F7F2]/90 rounded-full flex items-center justify-center text-[#4B533F] mb-4 border border-[#4B533F]/10 shadow-3xs">
+            <i data-lucide="shield-check" class="w-6 h-6 stroke-[1.5]"></i>
+          </div>
+          <h4 class="font-serif font-bold text-sm text-[#1A1A1A] mb-1">Satisfação 100% Garantida</h4>
+          <p class="text-xs text-[#2D2D2D]/70 max-w-xs leading-relaxed font-light">Oferecemos reembolso total até 7 dias após o recebimento se não amar o seu Édith.</p>
+        </div>
+        
+        <div class="flex flex-col items-center text-center p-3">
+          <div class="w-12 h-12 bg-[#F9F7F2]/90 rounded-full flex items-center justify-center text-[#4B533F] mb-4 border border-[#4B533F]/10 shadow-3xs">
+            <i data-lucide="refresh-cw" class="w-6 h-6 stroke-[1.5]"></i>
+          </div>
+          <h4 class="font-serif font-bold text-sm text-[#1A1A1A] mb-1">Troca Simples & Descomplicada</h4>
+          <p class="text-xs text-[#2D2D2D]/70 max-w-xs leading-relaxed font-light">Gostaria de trocar a peça de Dourado por Prata? Nós resolvemos isso para você sem taxas adicionais.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center p-3">
+          <div class="w-12 h-12 bg-[#F9F7F2]/90 rounded-full flex items-center justify-center text-[#4B533F] mb-4 border border-[#4B533F]/10 shadow-3xs">
+            <i data-lucide="heart" class="w-6 h-6 stroke-[1.5] text-[#A39171] fill-[#A39171]/10"></i>
+          </div>
+          <h4 class="font-serif font-bold text-sm text-[#1A1A1A] mb-1">Boutique Exclusiva Édith</h4>
+          <p class="text-xs text-[#2D2D2D]/70 max-w-xs leading-relaxed font-light">Campanha especial com estoque limitado. Aproveite as últimas unidades com frete cortesia ativo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Legal Footer -->
+  <footer class="w-full bg-neutral-950 text-white py-12 px-4 select-none font-sans text-center border-t border-[#4B533F]/15">
+    <div class="max-w-4xl mx-auto flex flex-col items-center gap-6">
+      <div class="flex flex-col items-center">
+        <span class="font-serif italic font-bold text-xl leading-tight tracking-wider text-white lowercase">
+          all
+          <span class="block not-italic font-sans font-black text-xs tracking-[0.25em] -mt-1 text-neutral-300 uppercase">
+            inports
+          </span>
+        </span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3.5 text-[11px] sm:text-xs text-neutral-400 font-medium leading-relaxed tracking-wide uppercase">
+        <span>© 2026 All Inports</span>
+        <span class="text-neutral-800">|</span>
+        <span>CNPJ: 67.064.511/0001-48</span>
+      </div>
+
+      <p class="text-[9px] text-neutral-500 max-w-sm leading-normal mt-2 border-t border-neutral-900 pt-4 uppercase tracking-wider">
+        Todos os direitos reservados. Landing page oficial para fins de demonstração de e-commerce e portfólio.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky Bottom Purchase CTA for Mobile -->
+  <div id="sticky-mobile-cta" class="md:hidden fixed bottom-0 left-0 right-0 bg-[#F9F7F2]/95 backdrop-blur-md border-t border-[#4B533F]/15 px-5 py-3.5 z-40 flex items-center justify-between shadow-[0_-4px_16px_rgba(75,83,63,0.12)] transition-all duration-300 translate-y-24 opacity-0 pointer-events-none">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-lg bg-white overflow-hidden shrink-0 border border-[#4B533F]/10">
+        <img id="sticky-preview-thumbnail" src="./src/assets/images/watch_gold_main_1780538308870.png" alt="Miniatura" class="w-full h-full object-cover animate-opacity duration-200" />
+      </div>
+      <div class="flex flex-col">
+        <span id="sticky-preview-title" class="text-[10px] uppercase font-bold text-[#4B533F] tracking-wider leading-none">Édith Dourado</span>
+        <div class="flex items-baseline gap-1.5 mt-0.5">
+          <span class="text-sm font-bold text-[#1A1A1A] font-serif leading-none">R$ 89,90</span>
+          <span class="text-[9px] text-[#2D2D2D]/55 line-through leading-none">R$ 119,90</span>
+        </div>
+      </div>
+    </div>
+    
+    <a id="sticky-btn-buy" href="https://seguro.allinports.shop/r/6BGD73TXT1" target="_blank" rel="noopener noreferrer" class="bg-[#4B533F] hover:bg-[#5A5A40] text-white text-[11px] font-bold uppercase py-2.5 px-6 rounded-full tracking-wider shadow-sm text-center font-sans">
+      COMPRAR AGORA
+    </a>
+  </div>
+
+  <!-- Lucide Icon Font Engine Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Standalone Vanilla JS Core Engine -->
+  <script>
+    // Asset images database
+    const GALLERY_RESOURCES = {
+      gold: [
+        './src/assets/images/watch_gold_main_1780538308870.png',
+        './src/assets/images/watch_gold_side_1780538332441.png',
+        './src/assets/images/watch_gold_wrist_1780538344294.png',
+        './src/assets/images/watch_gold_box_1780538357921.png'
+      ],
+      silver: [
+        './src/assets/images/watch_silver_main_1780538320365.png',
+        './src/assets/images/watch_gold_side_1780538332441.png',
+        './src/assets/images/watch_gold_wrist_1780538344294.png',
+        './src/assets/images/watch_gold_box_1780538357921.png'
+      ]
+    };
+
+    const SECURE_CHECKOUT_LINKS = {
+      Dourado: 'https://seguro.allinports.shop/r/6BGD73TXT1',
+      Prata: 'https://seguro.allinports.shop/r/88M72149M2'
+    };
+
+    const TECHNICAL_SPECS_DATA = [
+      { label: 'Movimento', value: 'Quartzo' },
+      { label: 'Caixa', value: 'Aço inoxidável formato oval, apenas 7 mm de espessura' },
+      { label: 'Diâmetro do mostrador', value: '24 mm, discreta e elegante' },
+      { label: 'Pulseira', value: 'Aço inoxidável, 10 mm de largura, fecho oculto' },
+      { label: 'Vidro', value: 'Hardlex resistente a arranhões' },
+      { label: 'Resistência à água', value: '3 ATM, suporta respingos e uso no dia a dia' },
+      { label: 'Cores disponíveis', value: 'Dourado e Prata' },
+      { label: 'Certificação', value: 'CE' }
+    ];
+
+    let systemReviews = [
+      {
+        id: 'rev-1',
+        name: 'Ana Laura',
+        rating: 5,
+        date: 'Há 1 semana',
+        comment: 'O relógio possui uma pulseira de metal ajustável em tom amarelo que se ajusta confortavelmente ao pulso, tornando-o ideal tanto para uso diário quanto para ocasiões especiais. Seu tom amarelo/dourado não é excessivamente marcante, mas sim sofisticado e moderno. Estou usando há uma semana e não ficou feio ou desbotado, então é de boa qualidade. A capa tem formato oval...',
+        avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
+        productImgUrl: './src/assets/images/watch_gold_main_1780538308870.png'
+      },
+      {
+        id: 'rev-2',
+        name: 'Andréia Nunes',
+        rating: 5,
+        date: 'Há 2 semanas',
+        comment: 'É lindo e tem uma aparência divina, adorei, só não vem com bateria, ops, e me serve perfeitamente porque você pode remover pequenos blocos para ajustá-lo perfeitamente.',
+        avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150',
+        productImgUrl: './src/assets/images/watch_gold_wrist_1780538344294.png'
+      },
+      {
+        id: 'rev-3',
+        name: 'Suellen Silva',
+        rating: 5,
+        date: 'Há 2 semanas',
+        comment: 'Este relógio dourado é simplesmente elegante. Possui um brilho sutil e um formato que estiliza muito o pulso. Parece caro, embora seja muito acessível. O fecho funciona perfeitamente e a alça é confortável, não aperta nem pesa. Recebi bem protegido e já estava funcionando.',
+        avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
+        productImgUrl: './src/assets/images/watch_gold_side_1780538332441.png'
+      },
+      {
+        id: 'rev-4',
+        name: 'Adriana Oliveira',
+        rating: 5,
+        date: 'Há 3 semanas',
+        comment: 'É perfeito, fácil de ajustar, tem ótima qualidade e uma cor muito bonita. Tenho um pulso bem fino e ele não parece grande demais de forma alguma.',
+        avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150',
+        productImgUrl: './src/assets/images/watch_gold_box_1780538357921.png'
+      },
+      {
+        id: 'rev-5',
+        name: 'Mariana Santana',
+        rating: 5,
+        date: 'Há 1 mês',
+        comment: 'O relógio é lindo! super delicado e elegante. pra quem estiver com dificuldade de ajustar assim como eu tive, é só levantar a parte que tem uma setinha (primeira imagem), com o auxílio da ferramenta que vem junto, depois é só puxar/ajustar pro tamanho que deseja.',
+        avatarUrl: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=150',
+        productImgUrl: './src/assets/images/watch_gold_main_1780538308870.png'
+      },
+      {
+        id: 'rev-6',
+        name: 'Mirian Cristina',
+        rating: 5,
+        date: 'Há 1 mês',
+        comment: 'Gostei o material parece ser bom, gostei que ele regular o tamanho que precisa vem até uma ferramenta para facilitar e é bem fácil de regular, gostei mesmo.',
+        avatarUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150',
+        productImgUrl: './src/assets/images/watch_gold_wrist_1780538344294.png'
+      },
+      {
+        id: 'rev-7',
+        name: 'Marcela Santana',
+        rating: 5,
+        date: 'Há 1 mês',
+        comment: 'É muito fofo, fica super estiloso com qualquer roupa e eleva significativamente o visual. O preço é incrível e chegou super rápido. Só tem que ter cuidado para que não fique feio rápido, mas é uma gracinha. ✨',
+        avatarUrl: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=150',
+        productImgUrl: './src/assets/images/watch_gold_side_1780538332441.png'
+      }
+    ];
+
+    // Reactive State
+    let selectedColor = 'Dourado';
+    let galleryImages = [...GALLERY_RESOURCES.gold];
+    let activeImageIndex = 0;
+    let reviewsVisibleCount = 3;
+
+    // Initialization hook
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      renderSpecs();
+      renderThumbnails();
+      renderReviews();
+      startCountdownTimer();
+
+      // Scroll hook for floating bottom CTA bar
+      window.addEventListener('scroll', () => {
+        const stickyBar = document.getElementById('sticky-mobile-cta');
+        if (window.scrollY > 480) {
+          stickyBar.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+          stickyBar.classList.add('translate-y-0', 'opacity-100');
+        } else {
+          stickyBar.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+          stickyBar.classList.remove('translate-y-0', 'opacity-100');
+        }
+      }, { passive: true });
+    });
+
+    // Sidebar drawer control
+    function toggleMenu(isOpen) {
+      const drawer = document.getElementById('side-drawer');
+      const inner = drawer.querySelector('.w-full');
+      if (isOpen) {
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        drawer.classList.add('opacity-100');
+        inner.classList.remove('-translate-x-full');
+        inner.classList.add('translate-x-0');
+      } else {
+        drawer.classList.add('pointer-events-none', 'opacity-0');
+        drawer.classList.remove('opacity-100');
+        inner.classList.add('-translate-x-full');
+        inner.classList.remove('translate-x-0');
+      }
+    }
+
+    // Specifications builder
+    function renderSpecs() {
+      const parent = document.getElementById('specs-table-rows');
+      parent.innerHTML = '';
+      TECHNICAL_SPECS_DATA.forEach(spec => {
+        const row = document.createElement('tr');
+        row.className = "border-b border-[#4B533F]/5 last:border-0 hover:bg-[#E5E1D8]/20 transition-colors duration-100";
+        row.innerHTML = `
+          <td class="w-5/12 py-3 px-4 sm:py-3.5 sm:px-5 font-bold text-[#4B533F] uppercase tracking-wider text-[9px] sm:text-[10px] bg-[#E5E1D8]/10 select-none whitespace-nowrap">
+            ${spec.label}
+          </td>
+          <td class="py-3 px-4 sm:py-3.5 sm:px-5 text-[#2D2D2D] font-medium text-xs sm:text-sm">
+            ${spec.value}
+          </td>
+        `;
+        parent.appendChild(row);
+      });
+    }
+
+    // Color Selector
+    function selectColor(color) {
+      if (selectedColor === color) return;
+      selectedColor = color;
+      
+      const btnGold = document.getElementById('color-btn-gold');
+      const btnSilver = document.getElementById('color-btn-silver');
+      if (color === 'Dourado') {
+        btnGold.className = "px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer bg-[#4B533F] text-white shadow-sm ring-4 ring-[#4B533F]/15";
+        btnSilver.className = "px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer border border-[#4B533F]/20 hover:border-[#4B533F] bg-white text-[#4B533F]";
+      } else {
+        btnGold.className = "px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer border border-[#4B533F]/20 hover:border-[#4B533F] bg-white text-[#4B533F]";
+        btnSilver.className = "px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer bg-[#4B533F] text-white shadow-sm ring-4 ring-[#4B533F]/15";
+      }
+
+      document.getElementById('title-color-suffix').innerText = `${color} Édith`;
+      galleryImages = color === 'Dourado' ? [...GALLERY_RESOURCES.gold] : [...GALLERY_RESOURCES.silver];
+      activeImageIndex = 0;
+
+      document.getElementById('btn-buy-checkout').href = SECURE_CHECKOUT_LINKS[color];
+      document.getElementById('sticky-btn-buy').href = SECURE_CHECKOUT_LINKS[color];
+
+      refreshActiveDisplay();
+      renderThumbnails();
+
+      document.getElementById('sticky-preview-title').innerText = `Édith ${color}`;
+      document.getElementById('sticky-preview-thumbnail').src = galleryImages[0];
+    }
+
+    // Gallery Slides
+    function refreshActiveDisplay() {
+      const displayElem = document.getElementById('main-active-img');
+      const counterTag = document.getElementById('gallery-counter-tag');
+      
+      displayElem.classList.add('opacity-0');
+      setTimeout(() => {
+        displayElem.src = galleryImages[activeImageIndex];
+        counterTag.innerText = `${activeImageIndex + 1} / ${galleryImages.length}`;
+        displayElem.classList.remove('opacity-0');
+        renderThumbnails();
+      }, 120);
+    }
+
+    function scrollGalleryIndex(offset) {
+      activeImageIndex = (activeImageIndex + offset + galleryImages.length) % galleryImages.length;
+      refreshActiveDisplay();
+    }
+
+    function renderThumbnails() {
+      const list = document.getElementById('thumbnails-list');
+      list.innerHTML = '';
+      galleryImages.forEach((img, idx) => {
+        const isActive = idx === activeImageIndex;
+        const btn = document.createElement('button');
+        btn.onclick = () => { activeImageIndex = idx; refreshActiveDisplay(); };
+        btn.className = `w-11 h-11 xs:w-12 xs:h-12 md:w-full md:h-auto md:aspect-square relative rounded-xl overflow-hidden border-2 transition-all duration-200 shrink-0 cursor-pointer ${
+          isActive ? 'border-[#4B533F] bg-white ring-3 ring-[#4B533F]/10' : 'border-transparent bg-white hover:border-[#4B533F]/20'
+        }`;
+        btn.innerHTML = `<img src="${img}" alt="Thumb" class="w-full h-full object-cover" />`;
+        list.appendChild(btn);
+      });
+    }
+
+    // Ticking Countdown
+    function startCountdownTimer() {
+      const targetTime = new Date('2026-06-12T23:59:59').getTime();
+      
+      function tick() {
+        const now = new Date().getTime();
+        const difference = targetTime - now;
+
+        let d = 0, h = 0, m = 0, s = 0;
+        if (difference > 0) {
+          d = Math.floor(difference / (1000 * 60 * 60 * 24));
+          h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          s = Math.floor((difference % (1000 * 60)) / 1000);
+        }
+
+        document.getElementById('timer-day').innerText = `${String(d).padStart(2, '0')}d`;
+        document.getElementById('timer-hour').innerText = `${String(h).padStart(2, '0')}h`;
+        document.getElementById('timer-min').innerText = `${String(m).padStart(2, '0')}m`;
+        document.getElementById('timer-sec').innerText = `${String(s).padStart(2, '0')}s`;
+      }
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    // Reviews list builder
+    function renderReviews() {
+      const parent = document.getElementById('reviews-feed-list');
+      parent.innerHTML = '';
+      
+      const toShow = systemReviews.slice(0, reviewsVisibleCount);
+      toShow.forEach(rev => {
+        const item = document.createElement('div');
+        item.className = "flex gap-4 sm:gap-6 border-b border-[#4B533F]/10 pb-6 sm:pb-8 last:border-0 last:pb-0 font-sans";
+        
+        let starsHtml = '';
+        for (let i = 0; i < rev.rating; i++) {
+          starsHtml += `<i data-lucide="star" class="w-3.5 h-3.5 fill-current text-[#A39171]"></i>`;
+        }
+        for (let i = rev.rating; i < 5; i++) {
+          starsHtml += `<i data-lucide="star" class="w-3.5 h-3.5 text-neutral-300"></i>`;
+        }
+
+        item.innerHTML = `
+          <div class="hidden sm:flex w-24 shrink-0 flex-col gap-2">
+            <div class="w-full aspect-square bg-[#E5E1D8]/20 rounded-xl overflow-hidden border border-[#4B533F]/10 select-none">
+              <img src="${rev.productImgUrl}" alt="Anexo" class="w-full h-full object-cover pointer-events-none" />
+            </div>
+            <div class="text-[9px] text-center text-neutral-400 font-mono tracking-tight font-medium uppercase truncate select-none">
+              Anexo Cliente
+            </div>
+          </div>
+
+          <div class="flex-1 flex flex-col gap-1.5 text-[#2D2D2D]">
+            <div class="flex items-center justify-between gap-1.5 mt-0.5">
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-full overflow-hidden bg-neutral-200">
+                  <img src="${rev.avatarUrl}" alt="Avatar" class="w-full h-full object-cover" />
+                </div>
+                <span class="font-semibold text-xs sm:text-sm text-[#1A1A1A]">${rev.name}</span>
+                <span class="inline-flex items-center gap-0.5 text-[#4B533F] text-[9px] font-bold bg-[#4B533F]/10 px-1.5 py-0.2 rounded-full uppercase tracking-wider select-none">
+                  <i data-lucide="shield-check" class="w-3 h-3 text-[#A39171] fill-current"></i> Verificado
+                </span>
+              </div>
+              <span class="text-[10px] text-neutral-400 font-mono font-medium">${rev.date}</span>
+            </div>
+
+            <div class="flex gap-0.5 select-none">${starsHtml}</div>
+            <p class="text-xs sm:text-sm text-[#2D2D2D]/90 leading-relaxed font-light">${rev.comment}</p>
+          </div>
+        `;
+        parent.appendChild(item);
+      });
+      lucide.createIcons();
+    }
+
+    function expandReviews() {
+      if (reviewsVisibleCount === 3) {
+        reviewsVisibleCount = systemReviews.length;
+        document.getElementById('label-reviews-btn').innerText = 'recolher depoimentos';
+        document.getElementById('icon-reviews-btn').setAttribute('data-lucide', 'chevron-up');
+      } else {
+        reviewsVisibleCount = 3;
+        document.getElementById('label-reviews-btn').innerText = 'ver mais depoimentos';
+        document.getElementById('icon-reviews-btn').setAttribute('data-lucide', 'chevron-down');
+      }
+      renderReviews();
+    }
+
+    // Feedback panel management
+    function toggleAddReviewForm() {
+      const container = document.getElementById('review-form-overlay');
+      if (container.classList.contains('hidden')) {
+        container.classList.remove('hidden');
+        container.classList.add('flex');
+        container.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        container.classList.add('hidden');
+        container.classList.remove('flex');
+      }
+    }
+
+    function setStarRating(rating) {
+      document.getElementById('form-star-count').value = rating;
+      for (let i = 1; i <= 5; i++) {
+        const starIcon = document.getElementById(`form-star-${i}`);
+        if (i <= rating) {
+          starIcon.classList.add('fill-[#A39171]');
+        } else {
+          starIcon.classList.remove('fill-[#A39171]');
+        }
+      }
+    }
+
+    function handleReviewFormSubmit(e) {
+      e.preventDefault();
+      const userName = document.getElementById('form-input-name').value.trim();
+      const userComment = document.getElementById('form-input-comment').value.trim();
+      const ratingVal = parseInt(document.getElementById('form-star-count').value);
+
+      if (!userName || !userComment) return;
+
+      const customRev = {
+        id: `rev-custom-${Date.now()}`,
+        name: userName,
+        rating: ratingVal,
+        date: 'Agora mesmo',
+        comment: userComment,
+        avatarUrl: `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150`,
+        productImgUrl: galleryImages[0]
+      };
+
+      systemReviews.unshift(customRev);
+      reviewsVisibleCount = Math.min(reviewsVisibleCount + 1, systemReviews.length);
+      renderReviews();
+
+      // Reset fields 
+      document.getElementById('form-input-name').value = '';
+      document.getElementById('form-input-comment').value = '';
+      setStarRating(5);
+
+      // Hide overlay form
+      document.getElementById('review-form-overlay').classList.add('hidden');
+      document.getElementById('review-form-overlay').classList.remove('flex');
+    }
+  </script>
+</body>
+</html>
